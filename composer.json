@@ -1,0 +1,11 @@
+{
+    "name": "mirovit/administr",
+    "description": "Administration package that allows for fast and flexible admin pages",
+    "authors": [
+        {
+            "name": "Miroslav Vitanov",
+            "email": "mvvitanov@gmail.com"
+        }
+    ],
+    "require": {}
+}

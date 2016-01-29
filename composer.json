@@ -15,11 +15,5 @@
         "psr-4": {
             "Administr\\": "src/"
         }
-    },
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/mirovit/administr"
-      }
-    ]
+    }
 }

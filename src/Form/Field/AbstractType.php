@@ -6,12 +6,14 @@ namespace Administr\Form\Field;
 abstract class AbstractType
 {
     protected $name;
+    protected $label;
     protected $options = [];
     protected $rules = [];
 
-    public function __construct($name, $options = [], $rules = [])
+    public function __construct($name, $label, $options = [], $rules = [])
     {
         $this->name = $name;
+        $this->label = $label;
         $this->options = $options;
         $this->rules = $rules;
     }

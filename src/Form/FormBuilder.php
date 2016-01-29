@@ -2,7 +2,6 @@
 
 namespace Administr\Form;
 
-
 use Closure;
 use Administr\Form\Field\AbstractType;
 use Administr\Form\Field\Text;
@@ -26,5 +25,16 @@ class FormBuilder
     public function text($fieldName, $options = [])
     {
         $this->add(new Text($fieldName, $options));
+    }
+
+    public function render()
+    {
+        $form = '';
+        foreach($this->fields as $field)
+        {
+            $form .= $field->render();
+        }
+
+        return $form;
     }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "mirovit/administr",
+    "name": "administrcms/administr",
     "description": "Administration package that allows for fast and flexible admin pages",
     "authors": [
         {
@@ -9,11 +9,18 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "administrcms/form": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Administr\\": "src/"
         }
-    }
+    },
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/administrcms/form.git"
+      }
+    ]
 }

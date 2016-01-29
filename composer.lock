@@ -4,9 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "334717dfda1fc4f62287ab2882f39640",
-    "content-hash": "7ca935ad5e0f9ed1a62b7feaa81e1926",
+    "hash": "3ee0eb4a89e31d628c4a832eef202165",
+    "content-hash": "0ecd2518b7c67a915c93c3af7b0e5602",
     "packages": [
+        {
+            "name": "administrcms/form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/administrcms/form.git",
+                "reference": "5948345ce05a66fa377117883c49de0be813551a"
+            },
+            "require": {
+                "laravel/framework": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Administr\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Miroslav Vitanov",
+                    "email": "mvvitanov@gmail.com"
+                }
+            ],
+            "description": "Administration package that allows for fast and flexible admin pages",
+            "time": "2016-01-29 12:33:47"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -1780,7 +1807,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "administrcms/form": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

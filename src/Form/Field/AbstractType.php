@@ -38,7 +38,7 @@ abstract class AbstractType
         return $this->renderLabel() . $this->renderField() . $this->renderErrors();
     }
 
-    abstract public function renderField();
+    abstract public function renderField($attributes = []);
     abstract public function renderLabel();
     abstract public function renderErrors();
 }

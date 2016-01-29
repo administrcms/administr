@@ -2,9 +2,7 @@
 
 namespace Administr\Form;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-abstract class Form extends FormRequest
+abstract class Form
 {
     protected $form;
     protected $rules;

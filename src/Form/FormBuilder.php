@@ -22,9 +22,8 @@ class FormBuilder
         $this->fields[] = $field;
     }
 
-    public function text($fieldName, $options = [])
     {
-        $this->add(new Text($fieldName, $options));
+        $this->add(new Text($fieldName, $fieldLabel, $options));
     }
 
     public function render()

@@ -36,4 +36,14 @@ class FormBuilder
 
         return $form;
     }
+
+    /**
+     * Get the fields in the form.
+     *
+     * @return array
+     */
+    public function getFields()
+    {
+        return $this->fields;
+    }
 }

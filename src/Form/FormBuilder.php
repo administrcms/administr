@@ -2,7 +2,6 @@
 
 namespace Administr\Form;
 
-use Closure;
 use Administr\Form\Field\AbstractType;
 use Administr\Form\Field\Text;
 
@@ -13,27 +12,17 @@ class FormBuilder
      */
     private $fields = [];
 
-    /**
-     * Shortcut for easier definition of forms.
-     *
-     * @param Closure $definition
-     * @return $this
-     */
-    public function define(Closure $definition)
-    {
-        $definition($this);
-
-        return $this;
-    }
 
     /**
      * Add a field to the form.
      *
      * @param AbstractType $field
+     * @return $this
      */
     public function add(AbstractType $field)
     {
         $this->fields[] = $field;
+        return $this;
     }
 
     /**
@@ -42,10 +31,11 @@ class FormBuilder
      * @param $fieldName
      * @param $fieldLabel
      * @param array $options
+     * @return FormBuilder
      */
     public function text($fieldName, $fieldLabel, $options = [])
     {
-        $this->add(new Text($fieldName, $fieldLabel, $options));
+        return $this->add(new Text($fieldName, $fieldLabel, $options));
     }
 
     /**

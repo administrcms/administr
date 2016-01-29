@@ -18,7 +18,7 @@ class Text extends AbstractType
 
     public function renderLabel()
     {
-        // TODO: Implement renderLabel() method.
+        return '<label for="'.$this->name.'">' . $this->label . '</label>';
     }
 
     public function renderErrors()

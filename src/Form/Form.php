@@ -36,6 +36,7 @@ abstract class Form
     /**
      * Define the fields of the form
      *
+     * @param FormBuilder $form
      * @return
      */
     abstract public function form(FormBuilder $form);

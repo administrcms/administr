@@ -10,6 +10,7 @@ abstract class Form
     public function __construct(FormBuilder $form)
     {
         $this->form = $form;
+        $this->form();
     }
 
     /**

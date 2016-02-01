@@ -2,7 +2,7 @@
 
 namespace Administr\Providers;
 
-
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class RoutesServiceProvider extends ServiceProvider

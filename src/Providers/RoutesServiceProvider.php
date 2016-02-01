@@ -19,26 +19,18 @@ class RoutesServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
+     * @param Router|\Illuminate\Routing\Router $router
      */
     public function boot(Router $router)
     {
-        //
+        $router->group(['namespace' => $this->namespace], function ($router) {
+            require __DIR__ . '/../routes.php';;
+        });
 
         parent::boot($router);
     }
 
-    /**
-     * Define the routes for the application.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
-     */
-    public function map(Router $router)
+    public function register()
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
-            require __DIR__ . '../routes.php';;
-        });
     }
 }

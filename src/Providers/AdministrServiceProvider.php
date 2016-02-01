@@ -21,12 +21,14 @@ class AdministrServiceProvider extends ServiceProvider
     {
         $this->registerProviders();
 
-        $this->mergeConfigFrom(__DIR__ . '../Config/administr.php', 'administr');
+        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'administr');
+
+        $this->mergeConfigFrom(__DIR__ . '/../Config/administr.php', 'administr');
     }
 
     public function boot(Kernel $kernel)
     {
-        $this->loadViewsFrom(__DIR__ . '../Views', 'administr');
+        $this->loadViewsFrom(__DIR__ . '/../Views', 'administr');
 
         $this->publishers();
 
@@ -36,19 +38,19 @@ class AdministrServiceProvider extends ServiceProvider
     private function publishers()
     {
         $this->publishes([
-            __DIR__ . '../Views' => resource_path('views/administr')
+            __DIR__ . '/../Views' => resource_path('views/administr')
         ], 'views');
 
         $this->publishes([
-            __DIR__ . '../Config/administr.php' => config_path('administr.php')
+            __DIR__ . '/../Config/administr.php' => config_path('administr.php')
         ], 'config');
 
         $this->publishes([
-            __DIR__ . '../Database/migrations' => database_path('migrations')
+            __DIR__ . '/../Database/migrations' => database_path('migrations')
         ], 'migrations');
 
         $this->publishes([
-            __DIR__ . '../Database/seeds' => database_path('seeds')
+            __DIR__ . '/../Database/seeds' => database_path('seeds')
         ], 'seeds');
     }
 

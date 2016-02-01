@@ -2,6 +2,7 @@
 
 namespace Administr\Providers;
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
 class AdministrServiceProvider extends ServiceProvider
@@ -21,8 +22,6 @@ class AdministrServiceProvider extends ServiceProvider
     {
         $this->registerProviders();
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'administr');
-
         $this->mergeConfigFrom(__DIR__ . '/../Config/administr.php', 'administr');
     }
 
@@ -30,9 +29,11 @@ class AdministrServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../Views', 'administr');
 
+        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'administr');
+
         $this->publishers();
 
-        $this->registerMiddlewares($kernel);
+//        $this->registerMiddlewares($kernel);
     }
 
     private function publishers()

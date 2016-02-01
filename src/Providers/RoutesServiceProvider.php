@@ -7,13 +7,38 @@ use Illuminate\Support\ServiceProvider;
 
 class RoutesServiceProvider extends ServiceProvider
 {
+    /**
+     * This namespace is applied to the controller routes in your routes file.
+     *
+     * In addition, it is set as the URL generator's root namespace.
+     *
+     * @var string
+     */
+    protected $namespace = 'Administr\Controllers';
 
     /**
-     * Register the service provider.
+     * Define your route model bindings, pattern filters, etc.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function register()
+    public function boot(Router $router)
     {
+        //
+
+        parent::boot($router);
+    }
+
+    /**
+     * Define the routes for the application.
+     *
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
+     */
+    public function map(Router $router)
+    {
+        $router->group(['namespace' => $this->namespace], function ($router) {
+            require __DIR__ . '../routes.php';;
+        });
     }
 }

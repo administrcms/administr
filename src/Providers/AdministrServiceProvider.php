@@ -4,6 +4,8 @@ namespace Administr\Providers;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
+use Maatwebsite\Sidebar\Middleware\ResolveSidebars;
+use Maatwebsite\Sidebar\SidebarServiceProvider;
 
 class AdministrServiceProvider extends ServiceProvider
 {
@@ -11,6 +13,11 @@ class AdministrServiceProvider extends ServiceProvider
     private $providers = [
         MenuServiceProvider::class,
         RoutesServiceProvider::class,
+        SidebarServiceProvider::class,
+    ];
+
+    private $middleware = [
+        ResolveSidebars::class
     ];
 
     /**
@@ -55,6 +62,16 @@ class AdministrServiceProvider extends ServiceProvider
         ], 'seeds');
     }
 
+    /**
+     * @param Kernel $kernel
+     */
+    private function registerMiddlewares(Kernel $kernel)
+    {
+        foreach ($this->middleware as $middleware)
+        {
+            $kernel->pushMiddleware($middleware);
+        }
+    }
 
     private function registerProviders()
     {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ee0eb4a89e31d628c4a832eef202165",
-    "content-hash": "0ecd2518b7c67a915c93c3af7b0e5602",
+    "hash": "9b5001478a103530afaa0d2d0c9236f8",
+    "content-hash": "9897c90fe7c4fde5f63daf05f1d5be3e",
     "packages": [
         {
             "name": "administrcms/form",
@@ -13,11 +13,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/form.git",
-                "reference": "5948345ce05a66fa377117883c49de0be813551a"
+                "reference": "90118d73f5b38ab4b1a2b46700c6639a4b8f1605"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/administrcms/form/zipball/90118d73f5b38ab4b1a2b46700c6639a4b8f1605",
+                "reference": "90118d73f5b38ab4b1a2b46700c6639a4b8f1605",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.2.*",
                 "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "4.8.*"
             },
             "type": "library",
             "autoload": {
@@ -25,6 +35,7 @@
                     "Administr\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Miroslav Vitanov",
@@ -32,7 +43,7 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-01-29 12:33:47"
+            "time": "2016-02-01 16:38:58"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -546,6 +557,58 @@
             "time": "2015-12-19 20:16:43"
         },
         {
+            "name": "maatwebsite/laravel-sidebar",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maatwebsite/Laravel-Sidebar.git",
+                "reference": "f56514d82088905cad21d15a66eaefbfb62ba67f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Sidebar/zipball/f56514d82088905cad21d15a66eaefbfb62ba67f",
+                "reference": "f56514d82088905cad21d15a66eaefbfb62ba67f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.0",
+                "illuminate/container": "~5.0",
+                "illuminate/contracts": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/support": "~5.0",
+                "illuminate/view": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\Sidebar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maatwebsite.nl",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "A sidebar builder for Laravel",
+            "keywords": [
+                "acp",
+                "laravel",
+                "menu",
+                "sidebar"
+            ],
+            "time": "2015-07-11 10:40:43"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.17.2",
             "source": {
@@ -766,16 +829,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
+                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/e6f80ab77885151908d0ec743689ca700886e8b0",
+                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +873,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-01-06 13:31:20"
+            "time": "2016-01-29 16:19:52"
         },
         {
             "name": "psr/log",

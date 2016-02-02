@@ -23,4 +23,9 @@ class AuthController extends Controller
     {
         return view('administr::users.login', compact('form'));
     }
+
+    public function postLogin(LoginForm $form)
+    {
+        dd($form->isValid());
+    }
 }

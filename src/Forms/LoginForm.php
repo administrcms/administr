@@ -7,17 +7,6 @@ use Administr\Form\FormBuilder;
 
 class LoginForm extends Form
 {
-
-    /**
-     * Define the validation rules for the form.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        // TODO: Implement rules() method.
-    }
-
     /**
      * Define the fields of the form
      *
@@ -28,8 +17,21 @@ class LoginForm extends Form
         $this->action = route('administr.auth.login');
         $this->method = 'post';
 
-        $form->email('email', trans('administr::users.email'));
-        $form->password('password', trans('administr::users.password'));
-        $form->submit('login', trans('administr::users.login'));
+        $form->email('email', trans('administr::users.email'))
+            ->password('password', trans('administr::users.password'))
+            ->submit('login', trans('administr::users.login'));
+    }
+
+    /**
+     * Define the validation rules for the form.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'email' => 'required|email',
+            'password'  => 'required|min:6'
+        ];
     }
 }

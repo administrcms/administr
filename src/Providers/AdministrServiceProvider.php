@@ -4,6 +4,7 @@ namespace Administr\Providers;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
+use Administr\Form\FormServiceProvider;
 use Maatwebsite\Sidebar\Middleware\ResolveSidebars;
 use Maatwebsite\Sidebar\SidebarServiceProvider;
 
@@ -13,6 +14,7 @@ class AdministrServiceProvider extends ServiceProvider
     private $providers = [
         MenuServiceProvider::class,
         RoutesServiceProvider::class,
+        FormServiceProvider::class,
         SidebarServiceProvider::class,
     ];
 

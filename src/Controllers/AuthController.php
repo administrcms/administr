@@ -15,7 +15,8 @@ class AuthController extends Controller
 
     public function __construct(Guard $auth)
     {
-
+        $this->middleware('auth', ['only' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'getLogout']);
         $this->auth = $auth;
     }
 
@@ -26,6 +27,20 @@ class AuthController extends Controller
 
     public function postLogin(LoginForm $form)
     {
-        dd($form->isValid());
+        $attempt = $this->auth->attempt(
+            [
+                'email' => $form->email,
+                'password' => $form->password,
+                'is_active' => true
+            ]
+        );
+
+        return redirect('/');
+    }
+
+    public function getLogout()
+    {
+        $this->auth->logout();
+        return redirect('/');
     }
 }

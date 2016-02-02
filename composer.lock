@@ -4,22 +4,16 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b5001478a103530afaa0d2d0c9236f8",
-    "content-hash": "9897c90fe7c4fde5f63daf05f1d5be3e",
+    "hash": "327385904eb827ee18abcd654db081e2",
+    "content-hash": "d4b8b001a355d4750937a2e8b55cbe50",
     "packages": [
         {
             "name": "administrcms/form",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/administrcms/form.git",
-                "reference": "90118d73f5b38ab4b1a2b46700c6639a4b8f1605"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/form/zipball/90118d73f5b38ab4b1a2b46700c6639a4b8f1605",
-                "reference": "90118d73f5b38ab4b1a2b46700c6639a4b8f1605",
-                "shasum": ""
+                "url": "../administr-form",
+                "reference": "6b14d2a4171cf9440ea48abfa9c13a806b60502b"
             },
             "require": {
                 "laravel/framework": "5.2.*",
@@ -27,6 +21,7 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "^0.9.4",
                 "phpunit/phpunit": "4.8.*"
             },
             "type": "library",
@@ -35,7 +30,6 @@
                     "Administr\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Miroslav Vitanov",
@@ -43,7 +37,7 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-02-01 16:38:58"
+            "time": "2016-02-02 21:02:16"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -346,16 +340,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.12",
+            "version": "v5.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6b6255ad7bfbdb721b8d00b09d52b146c5d363d7"
+                "reference": "0683b59b4b37e4a15614d62dfa7e526e35525df1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6b6255ad7bfbdb721b8d00b09d52b146c5d363d7",
-                "reference": "6b6255ad7bfbdb721b8d00b09d52b146c5d363d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0683b59b4b37e4a15614d62dfa7e526e35525df1",
+                "reference": "0683b59b4b37e4a15614d62dfa7e526e35525df1",
                 "shasum": ""
             },
             "require": {
@@ -470,7 +464,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-01-26 04:15:37"
+            "time": "2016-02-02 14:57:14"
         },
         {
             "name": "league/flysystem",

@@ -13,6 +13,12 @@
         "maatwebsite/laravel-sidebar": "~2.1",
         "administrcms/form": "dev-master"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "../administr-form"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Administr\\": "src/"

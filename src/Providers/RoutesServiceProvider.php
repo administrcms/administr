@@ -2,6 +2,7 @@
 
 namespace Administr\Providers;
 
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,10 +21,11 @@ class RoutesServiceProvider extends ServiceProvider
      * Define your route model bindings, pattern filters, etc.
      *
      * @param Router|\Illuminate\Routing\Router $router
+     * @param Repository $config
      */
-    public function boot(Router $router)
+    public function boot(Router $router, Repository $config)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
+        $router->group(['namespace' => $this->namespace, 'prefix' => $config->get('administr.prefix')], function ($router) {
             require __DIR__ . '/../routes.php';;
         });
 

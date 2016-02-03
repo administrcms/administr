@@ -4,16 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "327385904eb827ee18abcd654db081e2",
-    "content-hash": "d4b8b001a355d4750937a2e8b55cbe50",
+    "hash": "067e955b96e6ea07256603631de15f6c",
+    "content-hash": "e0f3f2d049b5b86f4076e76cbddf5465",
     "packages": [
+        {
+            "name": "administrcms/asset-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/administrcms/asset-manager.git",
+                "reference": "d50e823c5ff940c225336fb836326bdea1c19248"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/administrcms/asset-manager/zipball/d50e823c5ff940c225336fb836326bdea1c19248",
+                "reference": "d50e823c5ff940c225336fb836326bdea1c19248",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Administr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Miroslav Vitanov",
+                    "email": "mvvitanov@gmail.com"
+                }
+            ],
+            "time": "2016-02-03 09:58:31"
+        },
         {
             "name": "administrcms/form",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "../administr-form",
-                "reference": "6b14d2a4171cf9440ea48abfa9c13a806b60502b"
+                "reference": "65c31cf4a6aeed685fb0f23f4c10bfbb1c5ef706"
             },
             "require": {
                 "laravel/framework": "5.2.*",
@@ -37,7 +77,7 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-02-02 21:02:16"
+            "time": "2016-02-02 21:24:00"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1865,7 +1905,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "administrcms/form": 20
+        "administrcms/form": 20,
+        "administrcms/asset-manager": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

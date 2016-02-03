@@ -2,7 +2,10 @@
 
 namespace Administr\Providers;
 
+use Administr\Assets\AssetsFacade;
+use Administr\Assets\AssetsServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Administr\Form\FormServiceProvider;
 use Maatwebsite\Sidebar\Middleware\ResolveSidebars;
@@ -15,7 +18,12 @@ class AdministrServiceProvider extends ServiceProvider
         MenuServiceProvider::class,
         RoutesServiceProvider::class,
         FormServiceProvider::class,
+        AssetsServiceProvider::class,
         SidebarServiceProvider::class,
+    ];
+
+    private $facades = [
+        'Asset' => AssetsFacade::class,
     ];
 
     private $middleware = [
@@ -30,6 +38,7 @@ class AdministrServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerProviders();
+        $this->registerFacades();
 
         $this->mergeConfigFrom(__DIR__ . '/../Config/administr.php', 'administr');
     }
@@ -42,7 +51,7 @@ class AdministrServiceProvider extends ServiceProvider
 
         $this->publishers();
 
-//        $this->registerMiddlewares($kernel);
+        $this->registerMiddlewares($kernel);
     }
 
     private function publishers()
@@ -81,5 +90,10 @@ class AdministrServiceProvider extends ServiceProvider
         {
             $this->app->register($provider);
         }
+    }
+
+    private function registerFacades()
+    {
+        AliasLoader::getInstance($this->facades)->register();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Administr\Providers;
 
-use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 

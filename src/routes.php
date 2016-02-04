@@ -2,8 +2,10 @@
 
 Route::group(['middleware' => ['web']], function(){
 
-    Route::get('/', function(){
-    });
+    Route::get('/', [
+        'as'    => 'administr.dashboard.index',
+        'uses'  => 'DashboardController@index'
+    ]);
 
 
     /**

@@ -7,11 +7,11 @@
     <title>Administr</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="vendor/administr/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/administr/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="vendor/administr/AdminLTE/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="vendor/administr/AdminLTE/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/vendor/administr/AdminLTE/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/vendor/administr/AdminLTE/css/skins/skin-blue.min.css">
 
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,7 +58,7 @@
                                         <a href="#">
                                             <div class="pull-left">
                                                 <!-- User Image -->
-                                                <img src="vendor/administr/AdminLTE/img/user2-160x160.jpg"
+                                                <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg"
                                                      class="img-circle" alt="User Image">
                                             </div>
                                             <!-- Message title and timestamp -->
@@ -140,7 +140,7 @@
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="vendor/administr/AdminLTE/img/user2-160x160.jpg" class="user-image"
+                            <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="user-image"
                                  alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Alexander Pierce</span>
@@ -148,7 +148,7 @@
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle"
+                                <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle"
                                      alt="User Image">
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -195,7 +195,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -334,11 +334,11 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="vendor/administr/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="/vendor/administr/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="vendor/administr/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/administr/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="vendor/administr/AdminLTE/js/app.min.js"></script>
+<script src="/vendor/administr/AdminLTE/js/app.min.js"></script>
 
 </body>
 </html>

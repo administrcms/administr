@@ -1,6 +1,14 @@
 <?php
 
 Route::group(['middleware' => ['web']], function(){
+
+    Route::get('/', function(){
+    });
+
+
+    /**
+     * Auth routes
+     */
     Route::get('auth/login', [
         'as'   => 'administr.auth.login',
         'uses' => 'AuthController@getLogin'

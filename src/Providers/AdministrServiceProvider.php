@@ -4,6 +4,7 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
+use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -20,6 +21,7 @@ class AdministrServiceProvider extends ServiceProvider
         FormServiceProvider::class,
         AssetsServiceProvider::class,
         SidebarServiceProvider::class,
+        AdministrSidebarServiceProvider::class,
     ];
 
     private $facades = [
@@ -52,6 +54,8 @@ class AdministrServiceProvider extends ServiceProvider
         $this->publishers();
 
         $this->registerMiddlewares($kernel);
+
+        view()->composer('administr::layout.master', \Administr\ViewComposers\SidebarComposer::class);
     }
 
     private function publishers()

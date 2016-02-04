@@ -71,6 +71,10 @@ class AdministrServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../Database/seeds' => database_path('seeds')
         ], 'seeds');
+
+        $this->publishes([
+            __DIR__ . '/../Assets' => public_path('vendor/administr'),
+        ], 'public');
     }
 
     /**

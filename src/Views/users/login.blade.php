@@ -1,13 +1,30 @@
-@extends('administr::layout.master')
+@extends('administr::layout.auth')
 
 @section('content')
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>Admini</b>str</a>
+        </div><!-- /.login-logo -->
+        <div class="login-box-body">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-sm-6 col-xs-12 col-lg-push-3 col-sm-push-3">
-                {!! $form->render() !!}
-            </div>
-        </div>
-    </div>
+            {!! $form->render() !!}
 
+            <a href="#">I forgot my password</a><br>
+            <a href="#" class="text-center">Register a new membership</a>
+
+        </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+
+    <script src="/vendor/administr/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="/vendor/administr/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/administr/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
 @stop

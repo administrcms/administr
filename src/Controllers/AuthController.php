@@ -35,7 +35,12 @@ class AuthController extends Controller
             ]
         );
 
-        return redirect('/');
+        if( !$attempt )
+        {
+            return back();
+        }
+
+        return redirect()->route('administr.dashboard.index');
     }
 
     public function getLogout()

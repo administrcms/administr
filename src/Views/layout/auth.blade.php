@@ -26,6 +26,6 @@
     <![endif]-->
 </head>
 <body class="hold-transition login-page">
-@section('content')
+@yield('content')
 </body>
 </html>

@@ -22,7 +22,7 @@ class AuthController extends Controller
 
     public function getLogin(LoginForm $form)
     {
-        return view('administr::users.login', compact('form'));
+        return view('administr::auth.login', compact('form'));
     }
 
     public function postLogin(LoginForm $form)

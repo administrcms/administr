@@ -41,7 +41,7 @@ class AdministrSidebar implements Sidebar, ShouldCache
     public function build()
     {
         $this->menu->group(trans('administr::users.management'), function (Group $group) {
-            $group->item(trans('administr::users.users'), function (Item $item) {
+            $group->item(trans('administr::users.management'), function (Item $item) {
                 $item->weight(0);
                 $item->icon('fa fa-users');
                 $item->authorize(

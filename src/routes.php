@@ -7,6 +7,16 @@ Route::group(['middleware' => ['web']], function(){
         'uses'  => 'DashboardController@index'
     ]);
 
+    Route::resource('users', 'UsersController', [
+        'except'    => ['create', 'store'],
+        'names'     => [
+            'index'     => 'adminstr.users.index',
+            'edit'      => 'administr.users.edit',
+            'update'    => 'administr.users.update',
+            'destroy'   => 'administr.users.destroy',
+        ]
+    ]);
+
 
     /**
      * Auth routes

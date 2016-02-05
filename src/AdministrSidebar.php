@@ -40,14 +40,14 @@ class AdministrSidebar implements Sidebar, ShouldCache
      */
     public function build()
     {
-        $this->menu->group(trans('administer::users.management'), function (Group $group) {
-            $group->item(trans('administer::users.users'), function (Item $item) {
+        $this->menu->group(trans('administr::users.management'), function (Group $group) {
+            $group->item(trans('administr::users.users'), function (Item $item) {
                 $item->weight(0);
                 $item->icon('fa fa-users');
                 $item->authorize(
                     true
                 );
-                $item->item(trans('administer::users.users'), function (Item $item) {
+                $item->item(trans('administr::users.users'), function (Item $item) {
                     $item->weight(0);
                     $item->icon('fa fa-users');
                     $item->route('administr.dashboard.index');
@@ -55,7 +55,7 @@ class AdministrSidebar implements Sidebar, ShouldCache
                         true
                     );
                 });
-                $item->item(trans('administer::roles.roles'), function (Item $item) {
+                $item->item(trans('administr::roles.roles'), function (Item $item) {
                     $item->weight(1);
                     $item->icon('fa fa-flag-o');
                     $item->route('administr.dashboard.index');

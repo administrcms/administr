@@ -30,7 +30,6 @@ class AdministrSidebar implements Sidebar, ShouldCache
 
     public function __construct(Menu $menu, Application $app, Config $config)
     {
-
         $this->menu = $menu;
         $this->app = $app;
         $this->config = $config;
@@ -41,22 +40,22 @@ class AdministrSidebar implements Sidebar, ShouldCache
      */
     public function build()
     {
-        $this->menu->group(trans('administer::users.title'), function (Group $group) {
-            $group->item(trans('administer::users.title.users'), function (Item $item) {
+        $this->menu->group(trans('administer::users.management'), function (Group $group) {
+            $group->item(trans('administer::users.users'), function (Item $item) {
                 $item->weight(0);
-                $item->icon('fa fa-user');
+                $item->icon('fa fa-users');
                 $item->authorize(
                     true
                 );
-                $item->item(trans('administer::users.title.users'), function (Item $item) {
+                $item->item(trans('administer::users.users'), function (Item $item) {
                     $item->weight(0);
-                    $item->icon('fa fa-user');
+                    $item->icon('fa fa-users');
                     $item->route('administr.dashboard.index');
                     $item->authorize(
                         true
                     );
                 });
-                $item->item(trans('administer::roles.title.roles'), function (Item $item) {
+                $item->item(trans('administer::roles.roles'), function (Item $item) {
                     $item->weight(1);
                     $item->icon('fa fa-flag-o');
                     $item->route('administr.dashboard.index');

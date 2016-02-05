@@ -1,4 +1,4 @@
-@extends('administr::layouts.master')
+@extends('administr::layout.master')
 
 @section('content')
 @stop

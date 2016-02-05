@@ -13,9 +13,12 @@ class UsersController extends Controller
         return view('administr::users.index');
     }
 
-    public function edit(UserForm $form)
+    public function edit(UserForm $form, $id)
     {
-        return view('administer::users.edit', compact('form'));
+        $form->action = route('administr.users.update', [$id]);
+        $form->method = 'put';
+
+        return view('administr::users.edit', compact('form'));
     }
 
     public function update(UserForm $form)
@@ -25,6 +28,6 @@ class UsersController extends Controller
 
     public function destroy()
     {
-        
+
     }
 }

@@ -28,9 +28,6 @@ class UserForm extends Form
      */
     public function form(FormBuilder $form)
     {
-        $form->action = route('administr.users.update');
-        $form->method = 'put';
-
         $form
             ->email('email', 'Email address')
             ->password('password', 'Password')

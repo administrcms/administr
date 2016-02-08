@@ -4,8 +4,8 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
-use Administr\Localization\LocalizeFacade;
-use Administr\Localization\LocalizeMiddleware;
+use Administr\Localization\LocalizationFacade;
+use Administr\Localization\LocalizationMiddleware;
 use Administr\Localization\LocalizationServiceProvider;
 use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
@@ -33,13 +33,13 @@ class AdministrServiceProvider extends ServiceProvider
 
     private $facades = [
         'Asset'     => AssetsFacade::class,
-        'Locale'    => LocalizeFacade::class,
+        'Locale'    => LocalizationFacade::class,
         'Flash'     => Flash::class,
     ];
 
     private $middleware = [
         ResolveSidebars::class,
-        LocalizeMiddleware::class,
+        LocalizationMiddleware::class,
     ];
 
     /**

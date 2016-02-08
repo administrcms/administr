@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "067e955b96e6ea07256603631de15f6c",
-    "content-hash": "e0f3f2d049b5b86f4076e76cbddf5465",
+    "hash": "3d63bb960cd2b654d72688a3508b9065",
+    "content-hash": "77ec883500f58f343673465f9bb523fe",
     "packages": [
         {
             "name": "administrcms/asset-manager",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/asset-manager.git",
@@ -49,11 +49,17 @@
         },
         {
             "name": "administrcms/form",
-            "version": "dev-master",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "../administr-form",
-                "reference": "5397ba341637dcc2da4a2cc194aa615119848a11"
+                "url": "https://github.com/administrcms/form.git",
+                "reference": "f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/administrcms/form/zipball/f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0",
+                "reference": "f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.2.*",
@@ -70,6 +76,7 @@
                     "Administr\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Miroslav Vitanov",
@@ -77,7 +84,35 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-02-08 07:38:36"
+            "time": "2016-02-08 08:49:54"
+        },
+        {
+            "name": "administrcms/localization",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/administrcms/localization.git",
+                "reference": "3d8639a52767853e853d81dca1fe20155d70d0cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/administrcms/localization/zipball/3d8639a52767853e853d81dca1fe20155d70d0cb",
+                "reference": "3d8639a52767853e853d81dca1fe20155d70d0cb",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Miroslav Vitanov",
+                    "email": "mvvitanov@gmail.com"
+                }
+            ],
+            "time": "2016-02-08 10:34:40"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1904,10 +1939,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "administrcms/form": 20,
-        "administrcms/asset-manager": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

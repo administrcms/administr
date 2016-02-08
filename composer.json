@@ -11,8 +11,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "maatwebsite/laravel-sidebar": "~2.1",
-        "administrcms/form": "dev-master",
-        "administrcms/asset-manager": "dev-master"
+        "administrcms/form": "*",
+        "administrcms/asset-manager": "*"
     },
     "autoload": {
         "psr-4": {

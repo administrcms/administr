@@ -66,9 +66,17 @@ class AdministrSidebar implements Sidebar, ShouldCache
             });
         });
 
-        foreach ($this->config->get('administr.modules') as $module) {
-            $name = studly_case($module);
-            $class = "Administr\\{$name}\\SidebarExtender";
+        $sidebars = array_merge(
+            $this->config('administr.modules'),
+            $this->config('administr.sidebars')
+        );
+
+        foreach ($sidebars as $module) {
+            $class = studly_case($module);
+
+            if (!class_exists($class)) {
+                $class = "Administr\\{$class}\\SidebarExtender";
+            }
 
             if (!class_exists($class)) {
                 continue;

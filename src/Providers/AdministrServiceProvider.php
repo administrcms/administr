@@ -8,6 +8,7 @@ use Administr\Localization\LocalizeFacade;
 use Administr\Localization\LocalizeMiddleware;
 use Administr\Localization\LocalizationServiceProvider;
 use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
+use Dimsav\Translatable\TranslatableServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -29,6 +30,7 @@ class AdministrServiceProvider extends ServiceProvider
         AdministrSidebarServiceProvider::class,
         LocalizationServiceProvider::class,
         FlashServiceProvider::class,
+        TranslatableServiceProvider::class,
     ];
 
     private $facades = [

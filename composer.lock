@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d63bb960cd2b654d72688a3508b9065",
-    "content-hash": "77ec883500f58f343673465f9bb523fe",
+    "hash": "2c8e940f42f6229ec0180119d4951019",
+    "content-hash": "5e60fa6964b7173e927d9e8afa0bbba7",
     "packages": [
         {
             "name": "administrcms/asset-manager",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/asset-manager.git",
-                "reference": "d50e823c5ff940c225336fb836326bdea1c19248"
+                "reference": "b9d0b613d29c8e917321b0efe11aa9cc9bb8f233"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/asset-manager/zipball/d50e823c5ff940c225336fb836326bdea1c19248",
-                "reference": "d50e823c5ff940c225336fb836326bdea1c19248",
+                "url": "https://api.github.com/repos/administrcms/asset-manager/zipball/b9d0b613d29c8e917321b0efe11aa9cc9bb8f233",
+                "reference": "b9d0b613d29c8e917321b0efe11aa9cc9bb8f233",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Administr\\": "src/"
+                    "Administr\\Assets\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -45,20 +45,20 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-02-03 09:58:31"
+            "time": "2016-02-08 12:14:52"
         },
         {
             "name": "administrcms/form",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/form.git",
-                "reference": "f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0"
+                "reference": "3d06c5e2c000260a0f883d3c885516b5bfbc2494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/form/zipball/f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0",
-                "reference": "f0dc3b7d0c199694367f6d2705de1d7a9c78c1b0",
+                "url": "https://api.github.com/repos/administrcms/form/zipball/3d06c5e2c000260a0f883d3c885516b5bfbc2494",
+                "reference": "3d06c5e2c000260a0f883d3c885516b5bfbc2494",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Administr\\": "src/"
+                    "Administr\\Form\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -84,20 +84,20 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-02-08 08:49:54"
+            "time": "2016-02-08 12:15:16"
         },
         {
             "name": "administrcms/localization",
-            "version": "0.0.3",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/localization.git",
-                "reference": "4a8c973062f37c46aec2f670e5dcad5ac58b78b5"
+                "reference": "182b9ec3f035a400a939c0100f90d2c3b95d3411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/localization/zipball/4a8c973062f37c46aec2f670e5dcad5ac58b78b5",
-                "reference": "4a8c973062f37c46aec2f670e5dcad5ac58b78b5",
+                "url": "https://api.github.com/repos/administrcms/localization/zipball/182b9ec3f035a400a939c0100f90d2c3b95d3411",
+                "reference": "182b9ec3f035a400a939c0100f90d2c3b95d3411",
                 "shasum": ""
             },
             "require": {
@@ -105,6 +105,14 @@
                 "php": ">=5.5.9"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Administr\\Localization\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -112,7 +120,7 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-02-08 11:51:03"
+            "time": "2016-02-08 12:39:37"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -412,6 +420,49 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "laracasts/flash",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/e0a048b911092e15920ce66f4b6a54b6befa30a3",
+                "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2015-12-22 15:52:08"
         },
         {
             "name": "laravel/framework",

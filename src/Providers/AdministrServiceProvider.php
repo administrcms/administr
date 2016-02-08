@@ -12,6 +12,8 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Administr\Form\FormServiceProvider;
+use Laracasts\Flash\Flash;
+use Laracasts\Flash\FlashServiceProvider;
 use Maatwebsite\Sidebar\Middleware\ResolveSidebars;
 use Maatwebsite\Sidebar\SidebarServiceProvider;
 
@@ -26,11 +28,13 @@ class AdministrServiceProvider extends ServiceProvider
         SidebarServiceProvider::class,
         AdministrSidebarServiceProvider::class,
         LocalizationServiceProvider::class,
+        FlashServiceProvider::class,
     ];
 
     private $facades = [
         'Asset'     => AssetsFacade::class,
         'Locale'    => LocalizeFacade::class,
+        'Flash'     => Flash::class,
     ];
 
     private $middleware = [

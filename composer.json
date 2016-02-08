@@ -14,8 +14,7 @@
         "laracasts/flash": "1.3.*",
         "administrcms/form": "*",
         "administrcms/asset-manager": "*",
-        "administrcms/localization": "*",
-        "dimsav/laravel-translatable": "^5.5"
+        "administrcms/localization": "*"
     },
     "autoload": {
         "psr-4": {

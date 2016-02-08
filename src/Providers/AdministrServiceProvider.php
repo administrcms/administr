@@ -6,7 +6,7 @@ use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
 use Administr\Localization\LocalizeFacade;
 use Administr\Localization\LocalizeMiddleware;
-use Administr\Localization\LocalizeServiceProvider;
+use Administr\Localization\LocalizationServiceProvider;
 use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
@@ -25,7 +25,7 @@ class AdministrServiceProvider extends ServiceProvider
         AssetsServiceProvider::class,
         SidebarServiceProvider::class,
         AdministrSidebarServiceProvider::class,
-        LocalizeServiceProvider::class,
+        LocalizationServiceProvider::class,
     ];
 
     private $facades = [

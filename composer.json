@@ -14,12 +14,6 @@
         "administrcms/form": "dev-master",
         "administrcms/asset-manager": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "../administr-form"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Administr\\": "src/"

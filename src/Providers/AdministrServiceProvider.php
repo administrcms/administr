@@ -38,6 +38,7 @@ class AdministrServiceProvider extends ServiceProvider
     ];
 
     private $middleware = [
+        \Illuminate\Session\Middleware\StartSession::class,
         ResolveSidebars::class,
         LocalizationMiddleware::class,
     ];

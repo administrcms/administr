@@ -32,9 +32,9 @@ class AdministrServiceProvider extends ServiceProvider
     ];
 
     private $facades = [
-        'Asset'     => AssetsFacade::class,
-        'Locale'    => LocalizationFacade::class,
-        'Flash'     => Flash::class,
+        'Asset'         => AssetsFacade::class,
+        'Localizator'   => LocalizationFacade::class,
+        'Flash'         => Flash::class,
     ];
 
     private $middleware = [

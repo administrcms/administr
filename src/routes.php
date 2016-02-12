@@ -2,22 +2,23 @@
 
 Route::group(['middleware' => ['web']], function(){
 
-    Route::get('/', [
-        'as'    => 'administr.dashboard.index',
-        'uses'  => 'DashboardController@index'
-    ]);
+    Route::group(['middleware' => 'auth'], function(){
+        Route::get('/', [
+            'as'    => 'administr.dashboard.index',
+            'uses'  => 'DashboardController@index'
+        ]);
 
-    Route::resource('users', 'UsersController', [
-        'except'    => ['create', 'store'],
-        'names'     => [
-            'index'     => 'administr.users.index',
-            'edit'      => 'administr.users.edit',
-            'update'    => 'administr.users.update',
-            'destroy'   => 'administr.users.destroy',
-        ]
-    ]);
-
-
+        Route::resource('users', 'UsersController', [
+            'except'    => ['create', 'store'],
+            'names'     => [
+                'index'     => 'administr.users.index',
+                'edit'      => 'administr.users.edit',
+                'update'    => 'administr.users.update',
+                'destroy'   => 'administr.users.destroy',
+            ]
+        ]);
+    });
+    
     /**
      * Auth routes
      */

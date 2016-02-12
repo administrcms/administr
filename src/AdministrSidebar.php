@@ -67,8 +67,8 @@ class AdministrSidebar implements Sidebar, ShouldCache
         });
 
         $sidebars = array_merge(
-            $this->config('administr.modules'),
-            $this->config('administr.sidebars')
+            $this->config->get('administr.modules'),
+            $this->config->get('administr.sidebars')
         );
 
         foreach ($sidebars as $module) {

@@ -82,7 +82,7 @@ class AdministrSidebar implements Sidebar, ShouldCache
                 continue;
             }
 
-            $extender = $this->container->make($class);
+            $extender = $this->app->make($class);
             $this->menu->add(
                 $extender->extendWith($this->menu)
             );

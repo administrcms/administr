@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c8e940f42f6229ec0180119d4951019",
+    "hash": "23595a43bc27cb85396f3776ba6f1a6d",
     "content-hash": "5e60fa6964b7173e927d9e8afa0bbba7",
     "packages": [
         {
@@ -49,16 +49,16 @@
         },
         {
             "name": "administrcms/form",
-            "version": "0.0.2",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/form.git",
-                "reference": "3d06c5e2c000260a0f883d3c885516b5bfbc2494"
+                "reference": "d734f7835ac33bf632d1d786e6fc6a1695690310"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/form/zipball/3d06c5e2c000260a0f883d3c885516b5bfbc2494",
-                "reference": "3d06c5e2c000260a0f883d3c885516b5bfbc2494",
+                "url": "https://api.github.com/repos/administrcms/form/zipball/d734f7835ac33bf632d1d786e6fc6a1695690310",
+                "reference": "d734f7835ac33bf632d1d786e6fc6a1695690310",
                 "shasum": ""
             },
             "require": {
@@ -84,20 +84,20 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-02-08 12:15:16"
+            "time": "2016-02-12 14:49:05"
         },
         {
             "name": "administrcms/localization",
-            "version": "0.0.10",
+            "version": "0.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/localization.git",
-                "reference": "3dd6e2b56587410a4ce277e42bcf9a2d4b7cf256"
+                "reference": "444505f589a6cac0655e920df25c168d96e59b5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/localization/zipball/3dd6e2b56587410a4ce277e42bcf9a2d4b7cf256",
-                "reference": "3dd6e2b56587410a4ce277e42bcf9a2d4b7cf256",
+                "url": "https://api.github.com/repos/administrcms/localization/zipball/444505f589a6cac0655e920df25c168d96e59b5a",
+                "reference": "444505f589a6cac0655e920df25c168d96e59b5a",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-02-10 15:21:33"
+            "time": "2016-02-11 13:31:54"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -466,16 +466,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.14",
+            "version": "v5.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f"
+                "reference": "78fafb78d35c617e24630f4e099746effc42c787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f",
-                "reference": "ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/78fafb78d35c617e24630f4e099746effc42c787",
+                "reference": "78fafb78d35c617e24630f4e099746effc42c787",
                 "shasum": ""
             },
             "require": {
@@ -590,7 +590,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-03 14:19:04"
+            "time": "2016-02-12 14:59:18"
         },
         {
             "name": "league/flysystem",

@@ -2,6 +2,7 @@
 
 namespace Administr\ViewComposers;
 
+use Administr\Localization\Models\Language;
 use Illuminate\View\View;
 
 class LanguageComposer

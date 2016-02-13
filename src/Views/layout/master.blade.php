@@ -143,7 +143,7 @@
                             <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="user-image"
                                  alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">{{ auth()->user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -151,7 +151,7 @@
                                 <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle"
                                      alt="User Image">
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    {{ auth()->user()->name }}
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -198,7 +198,7 @@
                     <img src="/vendor/administr/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>{{ auth()->user()->name }}</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>

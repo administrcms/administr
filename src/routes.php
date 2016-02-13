@@ -8,6 +8,14 @@ Route::group(['middleware' => ['web']], function(){
             'uses'  => 'DashboardController@index'
         ]);
 
+        Route::get('/language/{code}', [
+            'as'    => 'administr.changeLang',
+            'uses'  => function($code){
+                Localizator::set($code);
+                return back();
+            }
+        ]);
+
         Route::resource('users', 'UsersController', [
             'except'    => ['create', 'store'],
             'names'     => [

@@ -67,6 +67,7 @@ class AdministrServiceProvider extends ServiceProvider
         $this->registerMiddlewares($kernel);
 
         view()->composer('administr::layout.master', \Administr\ViewComposers\SidebarComposer::class);
+        view()->composer('administr::layout.master', \Administr\ViewComposers\LanguageComposer::class);
     }
 
     private function publishers()

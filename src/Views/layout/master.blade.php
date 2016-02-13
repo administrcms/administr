@@ -42,6 +42,21 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <!-- Menu toggle button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            {{ session('lang.code') }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach($languages as $id => $code)
+                            <li>
+                                <a href="{{ route('administr.changeLang', [$code]) }}" @if($id === session('lang.id')) class="active" @endif>
+                                    {{ $code }}
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </li>
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
                         <!-- Menu toggle button -->

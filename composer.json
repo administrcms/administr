@@ -14,7 +14,8 @@
         "laracasts/flash": "1.3.*",
         "administrcms/form": "*",
         "administrcms/asset-manager": "*",
-        "administrcms/localization": "*"
+        "administrcms/localization": "*",
+        "administrcms/listview": "*"
     },
     "autoload": {
         "psr-4": {

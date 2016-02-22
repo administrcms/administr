@@ -4,6 +4,7 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
+use Administr\Listview\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
 use Administr\Localization\LocalizationMiddleware;
 use Administr\Localization\LocalizationServiceProvider;
@@ -29,6 +30,7 @@ class AdministrServiceProvider extends ServiceProvider
         AdministrSidebarServiceProvider::class,
         LocalizationServiceProvider::class,
         FlashServiceProvider::class,
+        ListViewServiceProvider::class,
     ];
 
     private $facades = [

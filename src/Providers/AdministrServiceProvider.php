@@ -4,7 +4,7 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
-use Administr\Listview\ListViewServiceProvider;
+use Administr\ListView\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
 use Administr\Localization\LocalizationMiddleware;
 use Administr\Localization\LocalizationServiceProvider;

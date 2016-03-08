@@ -50,19 +50,19 @@ class AdministrSidebar implements Sidebar, ShouldCache
                 $item->item(trans('administr::users.users'), function (Item $item) {
                     $item->weight(0);
                     $item->icon('fa fa-users');
-                    $item->route('administr.dashboard.index');
+                    $item->route('administr.users.index');
                     $item->authorize(
                         true
                     );
                 });
-                $item->item(trans('administr::roles.roles'), function (Item $item) {
-                    $item->weight(1);
-                    $item->icon('fa fa-flag-o');
-                    $item->route('administr.dashboard.index');
-                    $item->authorize(
-                        true
-                    );
-                });
+//                $item->item(trans('administr::roles.roles'), function (Item $item) {
+//                    $item->weight(1);
+//                    $item->icon('fa fa-flag-o');
+//                    $item->route('administr.dashboard.index');
+//                    $item->authorize(
+//                        true
+//                    );
+//                });
             });
         });
 

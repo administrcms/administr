@@ -13,14 +13,14 @@ class UsersController extends Controller
     public function index(ListView $ls)
     {
         $data = User::all();
-        $ls
+        $list
             ->setDataSource($data)
-            ->define(function(ListView $l){
-                $l->text('id', 'ID');
-                $l->text('email', 'Email');
+            ->define(function(ListView $list){
+                $list->text('id', 'ID');
+                $list->text('email', 'Email');
             });
 
-        return view('administr::users.index', compact('ls'));
+        return view('administr::users.index', compact('list'));
     }
 
     public function edit(UserForm $form, $id)

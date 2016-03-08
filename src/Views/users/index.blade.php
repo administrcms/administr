@@ -1,5 +1,5 @@
 @extends('administr::layout.master')
 
 @section('content')
-    {!! $ls !!}
+    {!! $list !!}
 @stop

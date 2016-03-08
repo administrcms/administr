@@ -10,7 +10,7 @@ use Illuminate\Routing\Controller;
 
 class UsersController extends Controller
 {
-    public function index(ListView $ls)
+    public function index(ListView $list)
     {
         $data = User::all();
         $list

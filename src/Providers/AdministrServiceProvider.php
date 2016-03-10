@@ -6,11 +6,12 @@ use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
 use Administr\ListView\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
-use Administr\Localization\LocalizationMiddleware;
+use Administr\Localization\Middleware\LocalizationMiddleware;
 use Administr\Localization\LocalizationServiceProvider;
 use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Administr\Form\FormServiceProvider;
 use Laracasts\Flash\Flash;
@@ -45,6 +46,10 @@ class AdministrServiceProvider extends ServiceProvider
         LocalizationMiddleware::class,
     ];
 
+    private $routeMiddleware = [
+        'administr.auth'    => \Administr\Localization\Middleware\AdminAuth,
+    ];
+
     /**
      * Register the service provider.
      *
@@ -58,7 +63,7 @@ class AdministrServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../Config/administr.php', 'administr');
     }
 
-    public function boot(Kernel $kernel)
+    public function boot(Kernel $kernel, Router $router)
     {
         $this->loadViewsFrom(__DIR__ . '/../Views', 'administr');
 
@@ -67,6 +72,7 @@ class AdministrServiceProvider extends ServiceProvider
         $this->publishers();
 
         $this->registerMiddlewares($kernel);
+        $this->registerRouteMiddlewares($router);
 
         view()->composer('administr::layout.master', \Administr\ViewComposers\SidebarComposer::class);
         view()->composer('administr::layout.master', \Administr\ViewComposers\LanguageComposer::class);
@@ -103,6 +109,14 @@ class AdministrServiceProvider extends ServiceProvider
         foreach ($this->middleware as $middleware)
         {
             $kernel->pushMiddleware($middleware);
+        }
+    }
+
+    private function registerRouteMiddlewares(Router $router)
+    {
+        foreach($this->routeMiddleware as $key => $middleware)
+        {
+            $router->middleware($key, $middleware);
         }
     }
 

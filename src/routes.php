@@ -2,7 +2,7 @@
 
 Route::group(['middleware' => ['web']], function(){
 
-    Route::group(['middleware' => 'auth'], function(){
+    Route::group(['middleware' => 'administr.auth'], function(){
         Route::get('/', [
             'as'    => 'administr.dashboard.index',
             'uses'  => 'DashboardController@index'

@@ -18,6 +18,7 @@ use Laracasts\Flash\Flash;
 use Laracasts\Flash\FlashServiceProvider;
 use Maatwebsite\Sidebar\Middleware\ResolveSidebars;
 use Maatwebsite\Sidebar\SidebarServiceProvider;
+use Administr\Localization\Middleware\AdminAuth;
 
 class AdministrServiceProvider extends ServiceProvider
 {
@@ -47,7 +48,7 @@ class AdministrServiceProvider extends ServiceProvider
     ];
 
     private $routeMiddleware = [
-        'administr.auth'    => \Administr\Localization\Middleware\AdminAuth,
+        'administr.auth'    => AdminAuth::class,
     ];
 
     /**

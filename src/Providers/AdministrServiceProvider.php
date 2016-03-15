@@ -82,7 +82,7 @@ class AdministrServiceProvider extends ServiceProvider
     private function publishers()
     {
         $this->publishes([
-            __DIR__ . '/../Views' => resource_path('views/administr')
+            __DIR__ . '/../Views' => resource_path('views/vendor/administr')
         ], 'views');
 
         $this->publishes([

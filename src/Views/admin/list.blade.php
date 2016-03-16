@@ -13,7 +13,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                    { listview }
+                    {!! $list->render() !!}
                 </div>
                 <!-- /.box-body -->
             </div>

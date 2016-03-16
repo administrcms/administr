@@ -44,11 +44,11 @@ class AdministrServiceProvider extends ServiceProvider
     private $middleware = [
         \Illuminate\Session\Middleware\StartSession::class,
         ResolveSidebars::class,
-        LocalizationMiddleware::class,
     ];
 
     private $routeMiddleware = [
-        'administr.auth'    => AdminAuth::class,
+        'administr.auth'        => AdminAuth::class,
+        'administr.localized'   => LocalizationMiddleware::class,
     ];
 
     /**

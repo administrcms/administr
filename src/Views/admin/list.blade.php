@@ -8,7 +8,12 @@
                     <h3 class="box-title">{ title }</h3>
 
                     <div class="box-tools">
-                        { global actions }
+                        @foreach($list->getActions('global') as $action)
+                            <a href="{{ $action->url }}" class="btn btn-default">
+                                <span class="{{ $action->icon }}"></span>
+                                {{ $action->getLabel() }}
+                            </a>
+                        @endforeach
                     </div>
                 </div>
                 <!-- /.box-header -->

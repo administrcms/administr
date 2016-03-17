@@ -10,7 +10,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    {!! $form !!}
+                    {!! $form->render() !!}
                 </div>
                 <!-- /.box-body -->
             </div>

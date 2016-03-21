@@ -25,40 +25,65 @@ class DummyClass extends AdminController
 
         $listView->class = 'table table-bordered table-hover';
 
+        $listView
+            ->action('add', 'Добави')
+            ->icon('fa fa-plus')
+            ->url( route('admin..create') )
+            ->setGlobal();
+
+        $listView
+            ->action('edit', '')
+            ->icon('fa fa-edit')
+            ->define(function(Action $action, array $item){
+                $action->url( route('admin..edit', [$item['id']]) );
+            });
 
         return $listView;
     }
 
     public function getStoreAction()
     {
+        return route('admin..store');
     }
 
     public function getUpdateAction($id)
     {
+        return route('admin..update', [$id]);
     }
 
     public function getModel($id)
     {
+        return;
     }
 
     /**
      * The logic for storing a model.
      *
-     * @param TeamForm $form
+     * @param Form $form
      * @return Response
      */
-    public function store(TeamForm $form)
+    public function store(Form $form)
     {
+        //$model = new Model;
+
+        $model = $model->create($form->all());
+
+        return redirect()->route('admin..edit', [$model->id]);
     }
 
     /**
      * The logic for updating a model.
      *
      * @param $id
-     * @param TeamForm $form
+     * @param Form $form
      * @return Response
      */
-    public function update($id, TeamForm $form)
+    public function update($id, Form $form)
     {
+        //$model = Model::find($id);
+
+        $model->update($form->all());
+
+        return back();
     }
 }

@@ -4,6 +4,7 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
+use Administr\Form\Commands\MakeFormCommand;
 use Administr\ListView\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
 use Administr\Localization\Middleware\LocalizationMiddleware;
@@ -41,6 +42,10 @@ class AdministrServiceProvider extends ServiceProvider
         'Flash'         => Flash::class,
     ];
 
+    private $commands = [
+        MakeFormCommand::class,
+    ];
+
     private $middleware = [
         \Illuminate\Session\Middleware\StartSession::class,
         ResolveSidebars::class,
@@ -60,6 +65,8 @@ class AdministrServiceProvider extends ServiceProvider
     {
         $this->registerProviders();
         $this->registerFacades();
+
+        $this->commands($this->commands);
 
         $this->mergeConfigFrom(__DIR__ . '/../Config/administr.php', 'administr');
     }

@@ -1,0 +1,64 @@
+<?php
+
+namespace DummyNamespace;
+
+use Administr\Controllers\AdminController;
+use Administr\ListView\Columns\Action;
+use Administr\ListView\ListView;
+use Illuminate\Http\Response;
+
+class DummyClass extends AdminController
+{
+    protected $form;
+
+    /**
+     * Get a configured instance of the ListView for the resource.
+     *
+     * @return ListView
+     */
+    public function getListView()
+    {
+        $listView = new ListView(
+            // set datasource here
+            // like: User::paginate(20)
+        );
+
+        $listView->class = 'table table-bordered table-hover';
+
+
+        return $listView;
+    }
+
+    public function getStoreAction()
+    {
+    }
+
+    public function getUpdateAction($id)
+    {
+    }
+
+    public function getModel($id)
+    {
+    }
+
+    /**
+     * The logic for storing a model.
+     *
+     * @param TeamForm $form
+     * @return Response
+     */
+    public function store(TeamForm $form)
+    {
+    }
+
+    /**
+     * The logic for updating a model.
+     *
+     * @param $id
+     * @param TeamForm $form
+     * @return Response
+     */
+    public function update($id, TeamForm $form)
+    {
+    }
+}

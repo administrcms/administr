@@ -4,6 +4,7 @@ namespace Administr\Providers;
 
 use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
+use Administr\Commands\MakeAdminController;
 use Administr\Form\Commands\MakeFormCommand;
 use Administr\ListView\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
@@ -44,6 +45,7 @@ class AdministrServiceProvider extends ServiceProvider
 
     private $commands = [
         MakeFormCommand::class,
+        MakeAdminController::class,
     ];
 
     private $middleware = [

@@ -33,7 +33,7 @@ abstract class AdminController extends Controller
 
     public function index()
     {
-        $list = $this->getListView();
+        $list = $this->getListView(func_get_args());
         return view('administr::admin.list', compact('list'));
     }
 
@@ -41,7 +41,7 @@ abstract class AdminController extends Controller
     {
         $form = $this->form;
 
-        $form->action = $this->getStoreAction();
+        $form->action = $this->getStoreAction(func_get_args());
         $form->method = 'post';
 
         return view('administr::admin.form', compact('form'));
@@ -52,7 +52,7 @@ abstract class AdminController extends Controller
         $model = $this->getModel($id);
 
         $form = $this->form;
-        $form->action = $this->getUpdateAction($id);
+        $form->action = $this->getUpdateAction($id, func_get_args());
         $form->method = 'put';
         $form->setDataSource($model);
 
@@ -67,24 +67,27 @@ abstract class AdminController extends Controller
     /**
      * Get a configured instance of the ListView for the resource.
      *
+     * @param array $args
      * @return ListView
      */
-    abstract public function getListView();
+    abstract public function getListView(array $args = []);
 
     /**
      * Get the action URL for storing data.
      *
+     * @param array $args
      * @return string
      */
-    abstract public function getStoreAction();
+    abstract public function getStoreAction(array $args = []);
 
     /**
      * Get the action URL for updating data.
      *
      * @param $id
+     * @param array $args
      * @return string
      */
-    abstract public function getUpdateAction($id);
+    abstract public function getUpdateAction($id, array $args = []);
 
     /**
      * Get an instance of the model for a record.

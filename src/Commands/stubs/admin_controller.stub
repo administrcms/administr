@@ -14,9 +14,10 @@ class DummyClass extends AdminController
     /**
      * Get a configured instance of the ListView for the resource.
      *
+     * @param array $args
      * @return ListView
      */
-    public function getListView()
+    public function getListView(array $args = [])
     {
         $listView = new ListView(
             // set datasource here
@@ -41,12 +42,12 @@ class DummyClass extends AdminController
         return $listView;
     }
 
-    public function getStoreAction()
+    public function getStoreAction(array $args = [])
     {
         return route('admin..store');
     }
 
-    public function getUpdateAction($id)
+    public function getUpdateAction($id, array $args = [])
     {
         return route('admin..update', [$id]);
     }

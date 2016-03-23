@@ -53,9 +53,10 @@ class DummyClass extends AdminController
         return route('admin..update', [$id]);
     }
 
-    public function getModel($id)
+    public function getModel(array $args)
     {
-        return;
+        list($id) = $args;
+        return Model::find($id);
     }
 
     /**

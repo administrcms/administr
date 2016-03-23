@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 
 class DummyClass extends AdminController
 {
-    protected $form;
+    protected $form = Form::class;
 
     /**
      * Get a configured instance of the ListView for the resource.
@@ -47,8 +47,9 @@ class DummyClass extends AdminController
         return route('admin..store');
     }
 
-    public function getUpdateAction($id, array $args = [])
+    public function getUpdateAction(array $args = [])
     {
+        list($id) = $args;
         return route('admin..update', [$id]);
     }
 
@@ -65,7 +66,7 @@ class DummyClass extends AdminController
      */
     public function store(Form $form)
     {
-        //$model = new Model;
+        $model = new Model;
 
         $model = $model->create($form->all());
 
@@ -81,7 +82,7 @@ class DummyClass extends AdminController
      */
     public function update($id, Form $form)
     {
-        //$model = Model::find($id);
+        $model = Model::find($id);
 
         $model->update($form->all());
 

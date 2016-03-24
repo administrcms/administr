@@ -28,6 +28,10 @@ abstract class AdminController extends Controller
 
     public function __construct()
     {
+        if(!$this->form) {
+            throw new \Exception('The Form class for ' . __CLASS__ . ' not set.');
+        }
+
         $this->form = app($this->form);
     }
 

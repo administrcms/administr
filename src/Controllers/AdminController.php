@@ -74,9 +74,9 @@ abstract class AdminController extends Controller
      */
     public function show($id, $redirectTo = null, $visibleField = 'is_visible')
     {
-        $model = $this->getModel($id);
+        $model = $this->getModel([$id]);
 
-        $model->update($visibleField, true);
+        $model->update([$visibleField => true]);
 
         if($redirectTo) {
             return redirect($redirectTo);
@@ -95,9 +95,9 @@ abstract class AdminController extends Controller
      */
     public function hide($id, $redirectTo = null, $visibleField = 'is_visible')
     {
-        $model = $this->getModel($id);
+        $model = $this->getModel([$id]);
 
-        $model->update($visibleField, false);
+        $model->update([$visibleField => false]);
 
         if($redirectTo) {
             return redirect($redirectTo);

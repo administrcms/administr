@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 17.3.2016 г.
- * Time: 14:49 ч.
- */
 
 namespace Administr\Controllers;
 
@@ -51,12 +45,14 @@ abstract class AdminController extends Controller
         return view('administr::admin.form', compact('form'));
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $model = $this->getModel($id);
+        $args = func_get_args();
+
+        $model = $this->getModel($args);
 
         $form = $this->form;
-        $form->action = $this->getUpdateAction($id, func_get_args());
+        $form->action = $this->getUpdateAction($args);
         $form->method = 'put';
         $form->setDataSource($model);
 
@@ -129,17 +125,16 @@ abstract class AdminController extends Controller
     /**
      * Get the action URL for updating data.
      *
-     * @param $id
      * @param array $args
      * @return string
      */
-    abstract public function getUpdateAction($id, array $args = []);
+    abstract public function getUpdateAction(array $args = []);
 
     /**
      * Get an instance of the model for a record.
      *
-     * @param $id
+     * @param array $args
      * @return Model
      */
-    abstract public function getModel($id);
+    abstract public function getModel(array $args);
 }

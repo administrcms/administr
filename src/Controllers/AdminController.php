@@ -69,6 +69,48 @@ abstract class AdminController extends Controller
     }
 
     /**
+     * Show a model, if applicable.
+     *
+     * @param $id
+     * @param string $redirectTo
+     * @param string $visibleField
+     * @return Response
+     */
+    public function show($id, $redirectTo = null, $visibleField = 'is_visible')
+    {
+        $model = $this->getModel($id);
+
+        $model->update($visibleField, true);
+
+        if($redirectTo) {
+            return redirect($redirectTo);
+        }
+
+        return back();
+    }
+
+    /**
+     * Hide a model, if applicable.
+     *
+     * @param $id
+     * @param string $redirectTo
+     * @param string $visibleField
+     * @return Response
+     */
+    public function hide($id, $redirectTo = null, $visibleField = 'is_visible')
+    {
+        $model = $this->getModel($id);
+
+        $model->update($visibleField, false);
+
+        if($redirectTo) {
+            return redirect($redirectTo);
+        }
+
+        return back();
+    }
+
+    /**
      * Get a configured instance of the ListView for the resource.
      *
      * @param array $args

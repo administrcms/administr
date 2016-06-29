@@ -111,7 +111,7 @@ abstract class AdminController extends Controller
         foreach($form->translated() as $language_id => $translation)
         {
             $model
-                ->translate($language_id)
+                ->language($language_id)
                 ->fill($translation);
         }
 

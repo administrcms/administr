@@ -106,15 +106,16 @@ abstract class AdminController extends Controller
         return back();
     }
 
-    protected function saveTranslation(Form $form, Model $model)
+    protected function saveTranslations(Form $form, Model $model)
     {
         foreach($form->translated() as $language_id => $translation)
         {
             $model
                 ->translate($language_id)
-                ->fill($translation)
-                ->save();
+                ->fill($translation);
         }
+
+        $model->save();
     }
 
     /**

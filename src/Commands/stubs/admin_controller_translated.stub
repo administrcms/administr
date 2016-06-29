@@ -73,7 +73,7 @@ class DummyClass extends AdminController
     {
         $model = (new DummyModel)->create();
 
-        $this->saveTranslation($form, $model);
+        $this->saveTranslations($form, $model);
 
         return redirect()->route('admin.dummyroute.index');
     }
@@ -89,7 +89,7 @@ class DummyClass extends AdminController
     {
         $model = DummyModel::find($id);
 
-        $this->saveTranslation($form, $model);
+        $this->saveTranslations($form, $model);
 
         return redirect()->route('admin.dummyroute.index');
     }

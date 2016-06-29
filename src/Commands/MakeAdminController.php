@@ -3,6 +3,8 @@
 namespace Administr\Commands;
 
 use Illuminate\Console\GeneratorCommand;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class MakeAdminController extends GeneratorCommand
 {
@@ -11,7 +13,7 @@ class MakeAdminController extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'administr:controller {name}';
+    protected $name = 'administr:controller';
 
     /**
      * The console command description.

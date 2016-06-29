@@ -2,7 +2,6 @@
 
 namespace Administr\Commands;
 
-
 use Illuminate\Console\GeneratorCommand;
 
 class MakeAdminController extends GeneratorCommand

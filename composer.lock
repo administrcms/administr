@@ -123,16 +123,16 @@
         },
         {
             "name": "administrcms/localization",
-            "version": "0.0.20",
+            "version": "0.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/localization.git",
-                "reference": "378834fbcfe94159150d25b9de0a366a1381fb22"
+                "reference": "3722fe6249988daf92ba465d65dac8709f573146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/localization/zipball/378834fbcfe94159150d25b9de0a366a1381fb22",
-                "reference": "378834fbcfe94159150d25b9de0a366a1381fb22",
+                "url": "https://api.github.com/repos/administrcms/localization/zipball/3722fe6249988daf92ba465d65dac8709f573146",
+                "reference": "3722fe6249988daf92ba465d65dac8709f573146",
                 "shasum": ""
             },
             "require": {
@@ -155,7 +155,7 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-06-29 09:16:57"
+            "time": "2016-06-29 10:00:09"
         },
         {
             "name": "classpreloader/classpreloader",

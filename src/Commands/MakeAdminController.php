@@ -38,12 +38,13 @@ class MakeAdminController extends GeneratorCommand
 
         $dummyModel = str_singular($noControllerName);
         $dummyModelNamespaced = $appNamespace . 'Models\\' . $dummyModel;
-        $stub = str_replace('DummyModel', $dummyModel, $stub);
         $stub = str_replace('DummyModelNamespaced', $dummyModelNamespaced, $stub);
+        $stub = str_replace('DummyModel', $dummyModel, $stub);
 
         $dummyForm = str_singular($noControllerName) . 'Form';
         $dummyFormNamespaced = $appNamespace . 'Http\\Forms\\' . $dummyForm;
         $stub = str_replace('DummyFormNamespaced', $dummyFormNamespaced, $stub);
+        $stub = str_replace('DummyForm', $dummyForm, $stub);
 
         return $stub;
     }

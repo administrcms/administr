@@ -105,6 +105,18 @@ abstract class AdminController extends Controller
 
         return back();
     }
+
+    protected function saveTranslation(Form $form, Model $model)
+    {
+        foreach($form->translated() as $language_id => $translation)
+        {
+            $model
+                ->translate($language_id)
+                ->fill($translation)
+                ->save();
+        }
+    }
+
     /**
      * Try to guess the corresponding form class
      * for the given controller.

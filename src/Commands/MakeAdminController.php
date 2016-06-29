@@ -56,6 +56,11 @@ class MakeAdminController extends GeneratorCommand
      */
     protected function getStub()
     {
+        if( $this->option('translated') )
+        {
+            return __DIR__.'/stubs/admin_controller_translated.stub';
+        }
+
         return __DIR__.'/stubs/admin_controller.stub';
     }
 
@@ -79,6 +84,18 @@ class MakeAdminController extends GeneratorCommand
     {
         return [
             ['name', InputArgument::REQUIRED, 'The name of the admin controller class.'],
+        ];
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['translated', 't', InputOption::VALUE_NONE, 'Create a new admin controller that uses a translated model.'],
         ];
     }
 }

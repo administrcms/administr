@@ -26,7 +26,9 @@ abstract class AdminController extends Controller
             $this->form = $this->getFormClass();
         }
 
-        $this->form = app($this->form);
+        if($this->form) {
+            $this->form = app($this->form);
+        }
     }
 
     public function index()

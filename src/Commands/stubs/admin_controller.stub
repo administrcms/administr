@@ -71,9 +71,7 @@ class DummyClass extends AdminController
      */
     public function store(DummyForm $form)
     {
-        $model = new DummyModel;
-
-        $model = $model->create($form->all());
+        $model = (new DummyModel)->create($form->all());
 
         return redirect()->route('admin.dummyroute.index');
     }

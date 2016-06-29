@@ -23,6 +23,31 @@ class MakeAdminController extends GeneratorCommand
 
     protected $type = 'Admin controller class';
 
+    protected function replaceClass($stub, $name)
+    {
+        $stub = parent::replaceClass($stub, $name);
+
+        $noControllerName = str_replace('Controller', '', $this->getNameInput());
+
+        $dummyRoute = str_plural(
+            strtolower( $noControllerName )
+        );
+        $stub = str_replace('dummyroute', $dummyRoute, $stub);
+
+        $appNamespace = $this->getLaravel()->getNamespace();
+
+        $dummyModel = str_singular($noControllerName);
+        $dummyModelNamespaced = $appNamespace . 'Models\\' . $dummyModel;
+        $stub = str_replace('DummyModel', $dummyModel, $stub);
+        $stub = str_replace('DummyModelNamespaced', $dummyModelNamespaced, $stub);
+
+        $dummyForm = str_singular($noControllerName) . 'Form';
+        $dummyFormNamespaced = $appNamespace . 'Http\\Forms\\' . $dummyForm;
+        $stub = str_replace('DummyFormNamespaced', $dummyFormNamespaced, $stub);
+
+        return $stub;
+    }
+
     /**
      * Get the stub file for the generator.
      *

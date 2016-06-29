@@ -7,6 +7,9 @@ use Administr\ListView\Columns\Action;
 use Administr\ListView\ListView;
 use Illuminate\Http\Response;
 
+use DummyModelNamespaced;
+use DummyFormNamespaced;
+
 class DummyClass extends AdminController
 {
     /**
@@ -18,23 +21,26 @@ class DummyClass extends AdminController
     public function getListView(array $args = [])
     {
         $listView = new ListView(
-            // set datasource here
-            // like: User::paginate(20)
+            DummyModel::paginate(20)
         );
 
         $listView->class = 'table table-bordered table-hover';
 
         $listView
+            ->text('id', '#')
+            ;
+
+        $listView
             ->action('add', 'Добави')
             ->icon('fa fa-plus')
-            ->url( route('admin..create') )
+            ->url( route('admin.dummyroute.create') )
             ->setGlobal();
 
         $listView
             ->action('edit', '')
             ->icon('fa fa-edit')
             ->define(function(Action $action, array $item){
-                $action->url( route('admin..edit', [$item['id']]) );
+                $action->url( route('admin.dummyroute.edit', [$item['id']]) );
             });
 
         return $listView;
@@ -42,49 +48,49 @@ class DummyClass extends AdminController
 
     public function getStoreAction(array $args = [])
     {
-        return route('admin..store');
+        return route('admin.dummyroute.store');
     }
 
     public function getUpdateAction(array $args = [])
     {
         list($id) = $args;
-        return route('admin..update', [$id]);
+        return route('admin.dummyroute.update', [$id]);
     }
 
     public function getModel(array $args)
     {
         list($id) = $args;
-        return Model::find($id);
+        return DummyModel::find($id);
     }
 
     /**
      * The logic for storing a model.
      *
-     * @param Form $form
+     * @param DummyForm $form
      * @return Response
      */
-    public function store(Form $form)
+    public function store(DummyForm $form)
     {
-        $model = new Model;
+        $model = new DummyModel;
 
         $model = $model->create($form->all());
 
-        return redirect()->route('admin..edit', [$model->id]);
+        return redirect()->route('admin.dummyroute.index');
     }
 
     /**
      * The logic for updating a model.
      *
      * @param $id
-     * @param Form $form
+     * @param DummyForm $form
      * @return Response
      */
-    public function update($id, Form $form)
+    public function update($id, DummyForm $form)
     {
-        $model = Model::find($id);
+        $model = DummyModel::find($id);
 
         $model->update($form->all());
 
-        return back();
+        return redirect()->route('admin.dummyroute.index');
     }
 }

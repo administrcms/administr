@@ -9,8 +9,6 @@ use Illuminate\Http\Response;
 
 class DummyClass extends AdminController
 {
-    protected $form = Form::class;
-
     /**
      * Get a configured instance of the ListView for the resource.
      *

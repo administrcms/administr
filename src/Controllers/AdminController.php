@@ -22,9 +22,11 @@ abstract class AdminController extends Controller
 
     public function __construct()
     {
-        if($this->form) {
-            $this->form = app($this->form);
+        if(is_null($this->form)) {
+            $this->form = $this->getFormClass();
         }
+
+        $this->form = app($this->form);
     }
 
     public function index()
@@ -102,6 +104,24 @@ abstract class AdminController extends Controller
         }
 
         return back();
+    }
+    /**
+     * Try to guess the corresponding form class
+     * for the given controller.
+     *
+     * @return string
+     */
+    protected function getFormClass()
+    {
+        $class = new \ReflectionClass( get_called_class() );
+
+        $namespace = app()->getNamespace();
+
+        $name = str_singular(
+            str_replace('Controller', '', $class->getShortName())
+        );
+
+        return sprintf('\%sHttp\Forms\%sForm', $namespace,$name);
     }
 
     /**

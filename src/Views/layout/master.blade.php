@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="/vendor/administr/AdminLTE/css/AdminLTE.min.css">
     <link rel="stylesheet" href="/vendor/administr/AdminLTE/css/skins/skin-blue.min.css">
+
+    @foreach(Asset::getCss() as $css)
+        <link rel="stylesheet" href="{{ $css }}">
+    @endforeach
+
     @yield('styles')
 
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -153,6 +158,11 @@
 <script src="/vendor/administr/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/vendor/administr/AdminLTE/js/app.min.js"></script>
+
+@foreach(Asset::getJs() as $js)
+    <script src="{{ $js }}"></script>
+@endforeach
+
 @yield('scripts')
 
 </body>

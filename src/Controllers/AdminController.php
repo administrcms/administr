@@ -20,17 +20,6 @@ abstract class AdminController extends Controller
      */
     protected $form;
 
-    public function __construct()
-    {
-        if(is_null($this->form)) {
-            $this->form = $this->getFormClass();
-        }
-
-        if($this->form) {
-            $this->form = app($this->form);
-        }
-    }
-
     public function index()
     {
         $list = $this->getListView(func_get_args());
@@ -39,7 +28,7 @@ abstract class AdminController extends Controller
 
     public function create()
     {
-        $form = $this->form;
+        $form = $this->getForm();
 
         $form->action = $this->getStoreAction(func_get_args());
         $form->method = 'post';
@@ -53,7 +42,7 @@ abstract class AdminController extends Controller
 
         $model = $this->getModel($args);
 
-        $form = $this->form;
+        $form = $this->getForm();
         $form->action = $this->getUpdateAction($args);
         $form->method = 'put';
         $form->setDataSource($model);
@@ -106,6 +95,21 @@ abstract class AdminController extends Controller
         }
 
         return back();
+    }
+
+    protected function getForm()
+    {
+        if($this->form instanceof Form) {
+            return $this->form;
+        }
+
+        if(is_null($this->form)) {
+            $this->form = $this->getFormClass();
+        }
+
+        $this->form = app($this->form);
+
+        return $this->form;
     }
 
     protected function saveTranslations(Form $form, Model $model)

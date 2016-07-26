@@ -63,7 +63,7 @@ abstract class AdminController extends Controller
      * @param string $visibleField
      * @return Response
      */
-    public function show($id, $redirectTo = null, $visibleField = 'is_visible')
+    public function showItem($id, $redirectTo = null, $visibleField = 'is_visible')
     {
         $model = $this->getModel([$id]);
 
@@ -84,7 +84,7 @@ abstract class AdminController extends Controller
      * @param string $visibleField
      * @return Response
      */
-    public function hide($id, $redirectTo = null, $visibleField = 'is_visible')
+    public function hideItem($id, $redirectTo = null, $visibleField = 'is_visible')
     {
         $model = $this->getModel([$id]);
 

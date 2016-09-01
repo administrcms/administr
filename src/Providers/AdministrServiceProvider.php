@@ -100,13 +100,13 @@ class AdministrServiceProvider extends ServiceProvider
             __DIR__ . '/../Config/administr.php' => config_path('administr.php')
         ], 'config');
 
-        $this->publishes([
-            __DIR__ . '/../Database/migrations' => database_path('migrations')
-        ], 'migrations');
+//        $this->publishes([
+//            __DIR__ . '/../Database/migrations' => database_path('migrations')
+//        ], 'migrations');
 
-        $this->publishes([
-            __DIR__ . '/../Database/seeds' => database_path('seeds')
-        ], 'seeds');
+//        $this->publishes([
+//            __DIR__ . '/../Database/seeds' => database_path('seeds')
+//        ], 'seeds');
 
         $this->publishes([
             __DIR__ . '/../Assets' => public_path('vendor/administr'),

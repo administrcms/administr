@@ -9,20 +9,20 @@
     "packages": [
         {
             "name": "administrcms/asset-manager",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/asset-manager.git",
-                "reference": "3f0d8eab2bce44a19c50a06d4bf46fc239ace597"
+                "reference": "8df955d1d9a8cbb77e444a2c82279c1892955ae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/asset-manager/zipball/3f0d8eab2bce44a19c50a06d4bf46fc239ace597",
-                "reference": "3f0d8eab2bce44a19c50a06d4bf46fc239ace597",
+                "url": "https://api.github.com/repos/administrcms/asset-manager/zipball/8df955d1d9a8cbb77e444a2c82279c1892955ae0",
+                "reference": "8df955d1d9a8cbb77e444a2c82279c1892955ae0",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "5.2.*",
+                "laravel/framework": ">=5.2",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -45,26 +45,26 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-07-01 12:49:31"
+            "time": "2016-09-08 06:47:53"
         },
         {
             "name": "administrcms/form",
-            "version": "0.0.22",
+            "version": "0.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/form.git",
-                "reference": "ff8b6d6106a058e8997a74aaf83e7c5265f4d5e8"
+                "reference": "7658596e0f117dfbfcb0b30fdcbb32486290f0df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/form/zipball/ff8b6d6106a058e8997a74aaf83e7c5265f4d5e8",
-                "reference": "ff8b6d6106a058e8997a74aaf83e7c5265f4d5e8",
+                "url": "https://api.github.com/repos/administrcms/form/zipball/7658596e0f117dfbfcb0b30fdcbb32486290f0df",
+                "reference": "7658596e0f117dfbfcb0b30fdcbb32486290f0df",
                 "shasum": ""
             },
             "require": {
                 "administrcms/asset-manager": "*",
                 "administrcms/localization": "*",
-                "laravel/framework": "5.2.*",
+                "laravel/framework": ">=5.2",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -86,25 +86,25 @@
                 }
             ],
             "description": "Administration package that allows for fast and flexible admin pages",
-            "time": "2016-09-02 13:49:45"
+            "time": "2016-09-08 06:48:04"
         },
         {
             "name": "administrcms/listview",
-            "version": "0.0.12",
+            "version": "0.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/administrcms/listview.git",
-                "reference": "40d3d25222edd4b5b6b4101319f09f73f6cb209a"
+                "reference": "bda969ef6cd3aec71f9b2360d138ba2c8d932649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/administrcms/listview/zipball/40d3d25222edd4b5b6b4101319f09f73f6cb209a",
-                "reference": "40d3d25222edd4b5b6b4101319f09f73f6cb209a",
+                "url": "https://api.github.com/repos/administrcms/listview/zipball/bda969ef6cd3aec71f9b2360d138ba2c8d932649",
+                "reference": "bda969ef6cd3aec71f9b2360d138ba2c8d932649",
                 "shasum": ""
             },
             "require": {
                 "administrcms/form": "*",
-                "laravel/framework": "5.2.*",
+                "laravel/framework": ">=5.2",
                 "nesbot/carbon": "^1.21",
                 "php": ">=5.5.9"
             },
@@ -121,7 +121,7 @@
                     "email": "mvvitanov@gmail.com"
                 }
             ],
-            "time": "2016-03-25 11:46:56"
+            "time": "2016-09-08 14:44:40"
         },
         {
             "name": "administrcms/localization",

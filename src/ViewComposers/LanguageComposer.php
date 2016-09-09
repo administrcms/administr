@@ -9,6 +9,10 @@ class LanguageComposer
 {
     public function compose(View $view)
     {
+        if( !config('administr.hasLanguages') ) {
+            return;
+        }
+
         $languages = \Cache::rememberForever('languages_list', function() {
             return Language::lists('code', 'id');
         });

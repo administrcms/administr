@@ -7,5 +7,6 @@ return [
     ],
     'sidebars'  => [
 
-    ]
+    ],
+    'hasLanguages' => true,
 ];

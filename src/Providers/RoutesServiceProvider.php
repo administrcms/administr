@@ -28,8 +28,6 @@ class RoutesServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace, 'prefix' => $config->get('administr.prefix')], function ($router) {
             require __DIR__ . '/../routes.php';;
         });
-
-        parent::boot($router);
     }
 
     public function register()

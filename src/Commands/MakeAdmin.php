@@ -65,6 +65,10 @@ class MakeAdmin extends Command
             'name'  => "{$name}TableSeeder",
         ]);
 
+        $status = $this->call('administr:listview', [
+            'name'  => "{$name}ListView",
+        ]);
+
         if($status !== 0) {
             $this->error('Some of the commands were not executed successfuly.');
         }

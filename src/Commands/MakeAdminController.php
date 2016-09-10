@@ -47,6 +47,11 @@ class MakeAdminController extends GeneratorCommand
         $stub = str_replace('DummyFormNamespaced', $dummyFormNamespaced, $stub);
         $stub = str_replace('DummyForm', $dummyForm, $stub);
 
+        $dummyListView = str_plural($noControllerName) . 'ListView';
+        $dummyListViewNamespaced = $appNamespace . 'Http\\ListViews\\' . $dummyForm;
+        $stub = str_replace('DummyListViewNamespaced', $dummyListViewNamespaced, $stub);
+        $stub = str_replace('DummyListView', $dummyListView, $stub);
+
         return $stub;
     }
 
@@ -73,7 +78,7 @@ class MakeAdminController extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Http\Controllers\Admin';
+        return $rootNamespace.'\Http\Controllers';
     }
 
     /**

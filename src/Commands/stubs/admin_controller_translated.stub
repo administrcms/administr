@@ -2,95 +2,97 @@
 
 namespace DummyNamespace;
 
-use Administr\Controllers\AdminController;
-use Administr\ListView\Columns\Action;
-use Administr\ListView\ListView;
-use Illuminate\Http\Response;
-
 use DummyModelNamespaced;
 use DummyFormNamespaced;
+use DummyListViewNamespaced;
+
+use Administr\Controllers\AdminController;
+use Illuminate\Http\Response;
+use App\Http\Requests;
 
 class DummyClass extends AdminController
 {
     /**
-     * Get a configured instance of the ListView for the resource.
-     *
-     * @param array $args
-     * @return ListView
+     * @return \Illuminate\Http\Response
      */
-    public function getListView(array $args = [])
+    public function index()
     {
-        $listView = new ListView(
+        $list = new DummyListView(
             DummyModel::translated()->paginate(20)
         );
 
-        $listView->class = 'table table-bordered table-hover';
-
-        $listView
-            ->text('id', '#')
-            ;
-
-        $listView
-            ->action('add', 'Добави')
-            ->icon('fa fa-plus')
-            ->url( route('admin.dummyroute.create') )
-            ->setGlobal();
-
-        $listView
-            ->action('edit', '')
-            ->icon('fa fa-edit')
-            ->define(function(Action $action, array $item){
-                $action->url( route('admin.dummyroute.edit', [$item['id']]) );
-            });
-
-        return $listView;
-    }
-
-    public function getStoreAction(array $args = [])
-    {
-        return route('admin.dummyroute.store');
-    }
-
-    public function getUpdateAction(array $args = [])
-    {
-        list($id) = $args;
-        return route('admin.dummyroute.update', [$id]);
-    }
-
-    public function getModel(array $args)
-    {
-        list($id) = $args;
-        return DummyModel::with('translations')->find($id);
+        return view('administr::admin.list', compact('list'));
     }
 
     /**
-     * The logic for storing a model.
-     *
      * @param DummyForm $form
-     * @return Response
+     * @return \Illuminate\Http\Response
+     */
+    public function create(DummyForm $form)
+    {
+        $form->action = route('admin.dummyroute.store');
+        $form->method = 'post';
+
+        return view('administr::admin.form', compact('form'));
+    }
+
+    /**
+     * @param DummyForm $form
+     * @return \Illuminate\Http\Response
      */
     public function store(DummyForm $form)
     {
-        $model = (new DummyModel)->create();
+        $model = DummyModel::create([]);
 
         $this->saveTranslations($form, $model);
 
-        return redirect()->route('admin.dummyroute.index');
+        if($model) {
+            flash()->success('');
+        } else {
+            flash()->error('');
+        }
+
+        return redirect()->route('app.dummyroute.index');
     }
 
     /**
-     * The logic for updating a model.
-     *
-     * @param $id
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * @param  int $id
      * @param DummyForm $form
-     * @return Response
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id, DummyForm $form)
+    {
+        $form->action = route('app.dummyroute.update', [$id]);
+        $form->method = 'put';
+        $form->setDataSource(DummyModel::translated()->find($id));
+
+        return view('administr::admin.form', compact('form'));
+    }
+
+    /**
+     * @param  int $id
+     * @param DummyForm $form
+     * @return \Illuminate\Http\Response
      */
     public function update($id, DummyForm $form)
     {
         $model = DummyModel::find($id);
 
-        $this->saveTranslations($form, $model);
+        if($this->saveTranslations($form, $model);) {
+            flash()->success('');
+        } else {
+            flash()->error('');
+        }
 
-        return redirect()->route('admin.dummyroute.index');
+        return redirect()->route('app.dummyroute.index');
     }
 }

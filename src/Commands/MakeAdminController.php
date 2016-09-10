@@ -48,7 +48,7 @@ class MakeAdminController extends GeneratorCommand
         $stub = str_replace('DummyForm', $dummyForm, $stub);
 
         $dummyListView = str_plural($noControllerName) . 'ListView';
-        $dummyListViewNamespaced = $appNamespace . 'Http\\ListViews\\' . $dummyForm;
+        $dummyListViewNamespaced = $appNamespace . 'Http\\ListViews\\' . $dummyListView;
         $stub = str_replace('DummyListViewNamespaced', $dummyListViewNamespaced, $stub);
         $stub = str_replace('DummyListView', $dummyListView, $stub);
 

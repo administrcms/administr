@@ -2,42 +2,67 @@
 
 namespace Administr\Controllers;
 
-
 use Administr\Forms\UserForm;
 use Administr\ListView\ListView;
+use Administr\ListViews\UsersListView;
 use App\Models\User;
-use Illuminate\Routing\Controller;
+use Illuminate\Database\Eloquent\Model;
 
-class UsersController extends Controller
+class UsersController extends AdminController
 {
-    public function index(ListView $list)
+    /**
+     * Get a configured instance of the ListView for the resource.
+     *
+     * @param array $args
+     * @return ListView
+     */
+    public function getListView(array $args = [])
     {
-        $data = User::all();
-        $list
-            ->setDataSource($data)
-            ->define(function(ListView $list){
-                $list->text('id', 'ID');
-                $list->text('email', 'Email');
-            });
-
-        return view('administr::users.index', compact('list'));
+        return new UsersListView(
+            User::paginate(20)
+        );
     }
 
-    public function edit(UserForm $form, $id)
+    /**
+     * Get the action URL for storing data.
+     *
+     * @param array $args
+     * @return string
+     */
+    public function getStoreAction(array $args = [])
     {
-        $form->action = route('administr.users.update', [$id]);
-        $form->method = 'put';
-
-        return view('administr::users.edit', compact('form'));
+        return null;
     }
 
-    public function update(UserForm $form)
+    /**
+     * Get the action URL for updating data.
+     *
+     * @param array $args
+     * @return string
+     */
+    public function getUpdateAction(array $args = [])
     {
-        dd($form);
+        list($id) = $args;
+        return route('administr.users.edit', [$id]);
     }
 
-    public function destroy()
+    /**
+     * Get an instance of the model for a record.
+     *
+     * @param array $args
+     * @return Model
+     */
+    public function getModel(array $args)
     {
+        return User::class;
+    }
 
+    public function update($id, UserForm $form)
+    {
+        $user = User::find($id);
+
+        $user->update($form->all());
+
+        return redirect()->route('administr.users.index');
     }
 }

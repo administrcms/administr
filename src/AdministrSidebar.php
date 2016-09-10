@@ -40,32 +40,6 @@ class AdministrSidebar implements Sidebar, ShouldCache
      */
     public function build()
     {
-        $this->menu->group(trans('administr::users.management'), function (Group $group) {
-            $group->item(trans('administr::users.management'), function (Item $item) {
-                $item->weight(0);
-                $item->icon('fa fa-users');
-                $item->authorize(
-                    true
-                );
-                $item->item(trans('administr::users.users'), function (Item $item) {
-                    $item->weight(0);
-                    $item->icon('fa fa-users');
-                    $item->route('administr.users.index');
-                    $item->authorize(
-                        true
-                    );
-                });
-//                $item->item(trans('administr::roles.roles'), function (Item $item) {
-//                    $item->weight(1);
-//                    $item->icon('fa fa-flag-o');
-//                    $item->route('administr.dashboard.index');
-//                    $item->authorize(
-//                        true
-//                    );
-//                });
-            });
-        });
-
         $sidebars = array_merge(
             $this->config->get('administr.modules'),
             $this->config->get('administr.sidebars')

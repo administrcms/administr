@@ -55,18 +55,18 @@ class MakeAdmin extends Command
 
         $status = $this->call('administr:model', $modelCmdArgs);
 
+        $status = $this->call('administr:listview', [
+            'name'  => "{$name}ListView",
+        ]);
+
+        $status = $this->call('make:seed', [
+            'name'  => "{$name}Seeder",
+        ]);
+
         $table = str_plural( snake_case( class_basename($name) ) );
         $status = $this->call('make:migration', [
             'name'      => "create_{$table}_table",
             '--create'  => $table,
-        ]);
-
-        $status = $this->call('make:seed', [
-            'name'  => "{$name}TableSeeder",
-        ]);
-
-        $status = $this->call('administr:listview', [
-            'name'  => "{$name}ListView",
         ]);
 
         if($status !== 0) {

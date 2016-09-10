@@ -28,7 +28,6 @@ class AdministrServiceProvider extends ServiceProvider
 {
 
     private $providers = [
-        MenuServiceProvider::class,
         RoutesServiceProvider::class,
         FormServiceProvider::class,
         AssetsServiceProvider::class,

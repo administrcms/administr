@@ -15,16 +15,6 @@ Route::group(['middleware' => ['web']], function(){
                 return back();
             }
         ]);
-
-        Route::resource('users', 'UsersController', [
-            'except'    => ['create', 'store'],
-            'names'     => [
-                'index'     => 'administr.users.index',
-                'edit'      => 'administr.users.edit',
-                'update'    => 'administr.users.update',
-                'destroy'   => 'administr.users.destroy',
-            ]
-        ]);
     });
     
     /**

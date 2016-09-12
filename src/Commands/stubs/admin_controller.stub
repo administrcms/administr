@@ -30,7 +30,7 @@ class DummyClass extends AdminController
      */
     public function create(DummyForm $form)
     {
-        $form->action = route('admin.dummyroute.store');
+        $form->action = route('app.dummyroute.store');
         $form->method = 'post';
 
         return view('administr::admin.form', compact('form'));

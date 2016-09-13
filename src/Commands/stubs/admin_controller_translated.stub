@@ -21,7 +21,7 @@ class DummyClass extends AdminController
             DummyModel::translated()->paginate(20)
         );
 
-        return view('administr::admin.list', compact('list'));
+        return view('dummyview.list', compact('list'));
     }
 
     /**
@@ -33,7 +33,7 @@ class DummyClass extends AdminController
         $form->action = route('app.dummyroute.store');
         $form->method = 'post';
 
-        return view('administr::admin.form', compact('form'));
+        return view('dummyview.form', compact('form'));
     }
 
     /**
@@ -75,7 +75,7 @@ class DummyClass extends AdminController
         $form->method = 'put';
         $form->setDataSource(DummyModel::translated()->find($id));
 
-        return view('administr::admin.form', compact('form'));
+        return view('dummyview.form', compact('form'));
     }
 
     /**

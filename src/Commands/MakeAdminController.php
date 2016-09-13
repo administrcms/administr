@@ -52,6 +52,9 @@ class MakeAdminController extends GeneratorCommand
         $stub = str_replace('DummyListViewNamespaced', $dummyListViewNamespaced, $stub);
         $stub = str_replace('DummyListView', $dummyListView, $stub);
 
+        $dummyView = str_plural( snake_case(class_basename($name), '-') );
+        $stub = str_replace('dummyview', $dummyView, $stub);
+
         return $stub;
     }
 

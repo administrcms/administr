@@ -4,6 +4,7 @@ namespace Administr\Controllers;
 
 use Administr\Form\Form;
 use Administr\ListView\ListView;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -19,6 +20,21 @@ abstract class AdminController extends Controller
      * @var Form
      */
     protected $form;
+
+    /**
+     * @param string|array $title
+     * @param string $separator
+     */
+    protected function title($title, $separator = ' - ')
+    {
+        if(is_array($title)) {
+            $title = implode($separator, $title);
+        }
+
+        view()->composer(['administr::layout.master', 'administr::layout.auth'], function(View $view) use ($title) {
+            $view->with('pageTitle', $title);
+        });
+    }
 
     /**
      * Show a model, if applicable.

@@ -13,6 +13,7 @@ use Administr\Localization\LocalizationFacade;
 use Administr\Localization\Middleware\LocalizationMiddleware;
 use Administr\Localization\LocalizationServiceProvider;
 use Administr\Providers\SidebarServiceProvider as AdministrSidebarServiceProvider;
+use Administr\QueryFilters\QueryFiltersServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Routing\Router;
@@ -36,6 +37,7 @@ class AdministrServiceProvider extends ServiceProvider
         LocalizationServiceProvider::class,
         FlashServiceProvider::class,
         ListViewServiceProvider::class,
+        QueryFiltersServiceProvider::class,
     ];
 
     private $facades = [

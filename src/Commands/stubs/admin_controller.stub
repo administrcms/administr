@@ -71,7 +71,7 @@ class DummyClass extends AdminController
     {
         $form->action = route('app.dummyroute.update', [$id]);
         $form->method = 'put';
-        $form->setDataSource(DummyModel::find($id));
+        $form->dataSource(DummyModel::find($id));
 
         return view('dummyview.form', compact('form'));
     }

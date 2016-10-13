@@ -32,7 +32,8 @@ class AuthController extends Controller
                 'email' => $form->email,
                 'password' => $form->password,
                 'is_active' => true
-            ]
+            ],
+            $form->has('remember')
         );
 
         if( !$attempt )

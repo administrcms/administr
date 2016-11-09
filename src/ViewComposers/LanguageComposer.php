@@ -14,6 +14,10 @@ class LanguageComposer
         }
 
         $languages = \Cache::rememberForever('languages_list', function() {
+            if (substr(app()::VERSION, 0, 3) == '5.2') {
+                return Language::lists('code', 'id');
+            }
+
             return Language::pluck('code', 'id');
         });
 

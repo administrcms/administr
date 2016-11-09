@@ -14,7 +14,7 @@ class LanguageComposer
         }
 
         $languages = \Cache::rememberForever('languages_list', function() {
-            if (substr(app()::VERSION, 0, 3) == '5.2') {
+            if (substr(app()::VERSION, 0, 3) < '5.3') {
                 return Language::lists('code', 'id');
             }
 

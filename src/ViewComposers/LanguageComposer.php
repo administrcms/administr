@@ -14,7 +14,7 @@ class LanguageComposer
         }
 
         $languages = \Cache::rememberForever('languages_list', function() {
-            return Language::lists('code', 'id');
+            return Language::pluck('code', 'id');
         });
 
         $view->with('languages', $languages);

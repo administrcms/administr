@@ -9,12 +9,15 @@ class LanguageComposer
 {
     public function compose(View $view)
     {
+        $app = new \Illuminate\Foundation\Application;
+        $appVersion = (double) $app->version();
+
         if( !config('administr.hasLanguages') ) {
             return;
         }
 
         $languages = \Cache::rememberForever('languages_list', function() {
-            if (substr(app()::VERSION, 0, 3) < '5.3') {
+            if ($appVersion < 5.3) {
                 return Language::lists('code', 'id');
             }
 

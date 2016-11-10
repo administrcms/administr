@@ -9,8 +9,7 @@ class LanguageComposer
 {
     public function compose(View $view)
     {
-        $app = new \Illuminate\Foundation\Application;
-        $appVersion = (double) $app->version();
+        $version = (double) app()->version();
 
         if( !config('administr.hasLanguages') ) {
             return;

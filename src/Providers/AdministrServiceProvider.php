@@ -6,8 +6,6 @@ use Administr\Assets\AssetsFacade;
 use Administr\Assets\AssetsServiceProvider;
 use Administr\Commands\MakeAdmin;
 use Administr\Commands\MakeAdminController;
-use Administr\Form\Commands\MakeFormCommand;
-use Administr\ListView\Commands\MakeListView;
 use Administr\ListView\ListViewServiceProvider;
 use Administr\Localization\LocalizationFacade;
 use Administr\Localization\Middleware\LocalizationMiddleware;
@@ -47,10 +45,8 @@ class AdministrServiceProvider extends ServiceProvider
     ];
 
     private $commands = [
-        MakeFormCommand::class,
         MakeAdminController::class,
         MakeAdmin::class,
-        MakeListView::class,
     ];
 
     private $middleware = [

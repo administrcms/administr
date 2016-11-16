@@ -38,6 +38,7 @@ class AuthController extends Controller
 
         if( !$attempt )
         {
+            flash()->error(trans('administr::auth.wrong_user_or_pass'));
             return back();
         }
 

@@ -30,7 +30,7 @@ class MakeAdminController extends GeneratorCommand
 
         $noControllerName = str_replace('Controller', '', $this->getNameInput());
 
-        $dummyRoute = str_plural(
+        $dummyRoute = config('administr.prefix') . '.' . str_plural(
             strtolower( snake_case( $noControllerName, '-' ) )
         );
         $stub = str_replace('dummyroute', $dummyRoute, $stub);

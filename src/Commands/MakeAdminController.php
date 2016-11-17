@@ -55,6 +55,9 @@ class MakeAdminController extends GeneratorCommand
         $dummyView = str_plural( snake_case(class_basename($noControllerName), '-') );
         $stub = str_replace('dummyview', $dummyView, $stub);
 
+        $dummyAppPrefix = config('administr::prefix');
+        $stub = str_replace('dummyappprefix', $dummyAppPrefix, $stub);
+
         return $stub;
     }
 

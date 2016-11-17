@@ -30,7 +30,7 @@ class DummyClass extends AdminController
      */
     public function create(DummyForm $form)
     {
-        $form->action = route('app.dummyroute.store');
+        $form->action = route('dummyappprefix.dummyroute.store');
         $form->method = 'post';
 
         return view('dummyview.form', compact('form'));
@@ -52,7 +52,7 @@ class DummyClass extends AdminController
             flash()->error('');
         }
 
-        return redirect()->route('app.dummyroute.index');
+        return redirect()->route('dummyappprefix.dummyroute.index');
     }
 
     /**
@@ -71,7 +71,7 @@ class DummyClass extends AdminController
      */
     public function edit($id, DummyForm $form)
     {
-        $form->action = route('app.dummyroute.update', [$id]);
+        $form->action = route('dummyappprefix.dummyroute.update', [$id]);
         $form->method = 'put';
         $form->dataSource(DummyModel::translated()->find($id));
 
@@ -93,6 +93,6 @@ class DummyClass extends AdminController
             flash()->error('');
         }
 
-        return redirect()->route('app.dummyroute.index');
+        return redirect()->route('dummyappprefix.dummyroute.index');
     }
 }

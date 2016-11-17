@@ -87,7 +87,7 @@ class DummyClass extends AdminController
     {
         $model = DummyModel::find($id);
 
-        if($this->saveTranslations($form, $model);) {
+        if($this->saveTranslations($form, $model)) {
             flash()->success('');
         } else {
             flash()->error('');

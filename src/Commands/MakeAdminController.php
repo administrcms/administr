@@ -52,11 +52,13 @@ class MakeAdminController extends GeneratorCommand
         $stub = str_replace('DummyListViewNamespaced', $dummyListViewNamespaced, $stub);
         $stub = str_replace('DummyListView', $dummyListView, $stub);
 
-        $dummyView = str_plural( snake_case(class_basename($noControllerName), '-') );
-        $stub = str_replace('dummyview', $dummyView, $stub);
+        $viewPath = config('administr.viewPath');
+        if(strlen($viewPath) > 0) {
+            $viewPath .= '.';
+        }
 
-        $dummyAppPrefix = config('administr::prefix');
-        $stub = str_replace('dummyappprefix', $dummyAppPrefix, $stub);
+        $dummyView = $viewPath . str_plural( snake_case(class_basename($noControllerName), '-') );
+        $stub = str_replace('dummyview', $dummyView, $stub);
 
         return $stub;
     }

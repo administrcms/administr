@@ -2,6 +2,7 @@
 
 return [
     'prefix'    => 'admin',
+    'viewPath' => 'admin',
     'modules'   => [
         'form',
     ],

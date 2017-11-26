@@ -33,6 +33,8 @@ class SidebarComposer
      */
     public function compose(View $view)
     {
+        $this->sidebar->build();
+
         $view->with('sidebar', $this->renderer->render(
             $this->sidebar
         ));

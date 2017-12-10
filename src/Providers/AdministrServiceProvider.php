@@ -127,7 +127,7 @@ class AdministrServiceProvider extends ServiceProvider
     {
         foreach($this->routeMiddleware as $key => $middleware)
         {
-            $router->middleware($key, $middleware);
+            $router->aliasMiddleware($key, $middleware);
         }
     }
 

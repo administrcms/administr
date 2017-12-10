@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": ">=5.2",
+        "laravel/framework": ">=5.4",
         "maatwebsite/laravel-sidebar": "~2.1",
         "laracasts/flash": "1.3.*",
         "administrcms/form": "*",

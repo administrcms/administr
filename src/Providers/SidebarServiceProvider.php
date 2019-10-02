@@ -6,6 +6,7 @@ use Administr\AdministrSidebar;
 use Illuminate\Support\ServiceProvider;
 use Maatwebsite\Sidebar\SidebarManager;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SidebarServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,6 @@ class SidebarServiceProvider extends ServiceProvider
     private function isBackend()
     {
         $url = $this->request->url();
-        return str_contains($url, config('administr.prefix'));
+        return Str::contains($url, config('administr.prefix'));
     }
 }

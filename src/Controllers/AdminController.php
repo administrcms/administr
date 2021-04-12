@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 
 abstract class AdminController extends Controller
 {
@@ -124,7 +125,7 @@ abstract class AdminController extends Controller
 
         $namespace = app()->getNamespace();
 
-        $name = str_singular(
+        $name = Str::singular(
             str_replace('Controller', '', $class->getShortName())
         );
 

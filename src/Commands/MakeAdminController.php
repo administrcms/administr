@@ -3,6 +3,7 @@
 namespace Administr\Commands;
 
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -30,24 +31,24 @@ class MakeAdminController extends GeneratorCommand
 
         $noControllerName = str_replace('Controller', '', $this->getNameInput());
 
-        $dummyRoute = config('administr.prefix') . '.' . str_plural(
+        $dummyRoute = config('administr.prefix') . '.' . Str::plural(
             strtolower( snake_case( $noControllerName, '-' ) )
         );
         $stub = str_replace('dummyroute', $dummyRoute, $stub);
 
         $appNamespace = $this->getLaravel()->getNamespace();
 
-        $dummyModel = str_singular($noControllerName);
+        $dummyModel = Str::singular($noControllerName);
         $dummyModelNamespaced = $appNamespace . 'Models\\' . $dummyModel;
         $stub = str_replace('DummyModelNamespaced', $dummyModelNamespaced, $stub);
         $stub = str_replace('DummyModel', $dummyModel, $stub);
 
-        $dummyForm = str_singular($noControllerName) . 'Form';
+        $dummyForm = Str::singular($noControllerName) . 'Form';
         $dummyFormNamespaced = $appNamespace . 'Http\\Forms\\' . $dummyForm;
         $stub = str_replace('DummyFormNamespaced', $dummyFormNamespaced, $stub);
         $stub = str_replace('DummyForm', $dummyForm, $stub);
 
-        $dummyListView = str_plural($noControllerName) . 'ListView';
+        $dummyListView = Str::plural($noControllerName) . 'ListView';
         $dummyListViewNamespaced = $appNamespace . 'Http\\ListViews\\' . $dummyListView;
         $stub = str_replace('DummyListViewNamespaced', $dummyListViewNamespaced, $stub);
         $stub = str_replace('DummyListView', $dummyListView, $stub);
@@ -57,7 +58,7 @@ class MakeAdminController extends GeneratorCommand
             $viewPath .= '.';
         }
 
-        $dummyView = $viewPath . str_plural( snake_case(class_basename($noControllerName), '-') );
+        $dummyView = $viewPath . Str::plural( Str::snake(class_basename($noControllerName), '-') );
         $stub = str_replace('dummyview', $dummyView, $stub);
 
         return $stub;

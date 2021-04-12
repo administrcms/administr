@@ -3,6 +3,7 @@
 namespace Administr\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -27,7 +28,7 @@ class MakeAdmin extends Command
     public function handle()
     {
         $name = trim( $this->argument('name') );
-        $nameSingular = str_singular($name);
+        $nameSingular = Str::singular($name);
 
         $status = 0;
 
@@ -63,7 +64,7 @@ class MakeAdmin extends Command
             'name'  => "{$name}Seeder",
         ]);
 
-        $table = str_plural( snake_case( class_basename($name) ) );
+        $table = Str::plural( Str::snake( class_basename($name) ) );
         $status = $this->call('make:migration', [
             'name'      => "create_{$table}_table",
             '--create'  => $table,

@@ -4,6 +4,7 @@ namespace Administr;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Str;
 use Maatwebsite\Sidebar\Group;
 use Maatwebsite\Sidebar\Item;
 use Maatwebsite\Sidebar\Menu;
@@ -46,7 +47,7 @@ class AdministrSidebar implements Sidebar, ShouldCache
         );
 
         foreach ($sidebars as $module) {
-            $class = studly_case($module);
+            $class = Str::studly($module);
 
             if (!class_exists($class)) {
                 $class = "Administr\\{$class}\\SidebarExtender";
